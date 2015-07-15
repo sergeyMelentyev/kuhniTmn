@@ -2,10 +2,11 @@
 var gradientBackGroundAddOn = $('.gradientBackGroundAddOn');
 var svgDunamicElements = $('.svgDunamicElements');
 var comingSoon = $('.comingSoon');
+var centerSvgDunamicFinal = $('#centerSvgDunamicFinal');
 
 var myVivus = new Vivus('centerSvgDunamic', {
     type: 'delayed',
-    duration: 450},
+    duration: 250},
     function(){
     	animateTheRest();
     });
@@ -16,6 +17,8 @@ var animateTheRest = function(){
 
 setTimeout(function(){
 	myVivus.stop();
-	gradientBackGroundAddOn.transition({ opacity: 100 }, 2000, 'ease');	
+	centerSvgDunamicFinal.css({'display': 'initial'});
+	centerSvgDunamicFinal.transition({ opacity: 100 }, 2000, 'ease');
+	gradientBackGroundAddOn.transition({ opacity: 100 }, 2000, 'ease');
 	comingSoon.transition({x: '0px', opacity: 80}, 750, 'ease');
-}, 6500);
+}, 5000);
