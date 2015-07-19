@@ -169,10 +169,12 @@ p{
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 }
-h1{
+.firsPage header{
 	position: absolute;
 	color: #FFF;
 	top: 0px;
+	right: 0px;
+	bottom: 0px;
 	left: 0px;
 	margin: auto;
 }
