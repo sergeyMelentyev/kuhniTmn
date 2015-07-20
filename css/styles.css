@@ -177,8 +177,65 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-}
 
+}
+.firsPage h1{
+	position: absolute;
+	width: 90%;
+	left: 0px;
+	right: 0px;
+	top: 15%;
+	margin: 0 auto;
+	font-size: 3.5em;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+}
+.firsPage section{
+	position: absolute;
+	width: 100%;
+	height: 35%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+}
+.firstPageBullets{
+	font-size: 2em;
+	line-height: 3em;
+	text-align: right;
+}
+.firstPageBullets span{
+	opacity: 0;
+	margin-bottom: 20px;
+}
+.firsPage aside{
+	font-size: 2em;
+	font-weight: 900;
+	line-height: 3em;
+	text-transform: uppercase;
+	text-align: left;
+}
+.firsPage aside h2{
+	text-align: center;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: rgba(220, 220, 220, 0.5);
+	box-shadow: 0px 0px 15px 3px #FFF;
+}
+.secondPage h1{
+	position: absolute;
+	left: 0px;
+	color: #FFF;
+	font-size: 2.5em;
+}
+.secondPage h2{
+	position: absolute;
+	left: 0px;
+	color: #FFF;
+	font-size: 2.5em;
+}
 
 
 
