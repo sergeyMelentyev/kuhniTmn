@@ -80,9 +80,23 @@ function startApplication () {
 				responsiveHeight: 0,
 				sectionSelector: '.section',
 				slideSelector: '.slide',
-				onLeave: function(index, nextIndex, direction){},
-				afterLoad: function(anchorLink, index){},
-				afterRender: function(){},
+				onLeave: function(index, nextIndex, direction){
+					console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " +  direction);
+					if (index === 2 && nextIndex === 1) { // переход на первую страницу со второй
+						$('.bgvid').get(0).play();
+					};
+				},
+				afterLoad: function(anchorLink, index){
+					if(anchorLink == 'Quality'){
+						$('.secondPage h1').transition({ opacity: 0, delay: 500 }, 500);
+						console.log('Second page animation fires!');
+					};
+				},
+				afterRender: function(){
+					$('.bgvid').get(0).play();
+					$('.firstPageBullets span').transition({x: 20, opacity: 100}, 500);
+					console.log('Video fires after page rendered!')
+				},
 				afterResize: function(){},
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
@@ -90,13 +104,3 @@ function startApplication () {
 			}, 600);
 	});
   };
-
-
-
-
-
-
-
-
-
-
