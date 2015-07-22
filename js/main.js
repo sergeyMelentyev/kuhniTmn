@@ -39,7 +39,7 @@ function startApplication () {
 		setTimeout(function(){
 			mainContantWrapper.css({'overflow': 'initial'});
 			mainContantWrapper.css({'height': 'auto'});
-		}, 600);
+		}, 1000);
 		setTimeout(function(){
 			fullpage.fullpage({
 				menu: false,
@@ -88,13 +88,14 @@ function startApplication () {
 				},
 				afterLoad: function(anchorLink, index){
 					if(anchorLink == 'Quality'){
-						$('.secondPage h1').transition({ opacity: 0, delay: 500 }, 500);
 						console.log('Second page animation fires!');
 					};
 				},
 				afterRender: function(){
 					$('.bgvid').get(0).play();
-					$('.firstPageBullets span').transition({x: 20, opacity: 100}, 500);
+					$('.firstOffer').transition({ x: -320, delay: 0 }, 750, 'ease');
+					$('.secondOffer').transition({ x: -320, delay: 200 }, 750, 'ease');
+					$('.thirdOffer').transition({ x: -320, delay: 400 }, 750, 'ease');
 					console.log('Video fires after page rendered!')
 				},
 				afterResize: function(){},
