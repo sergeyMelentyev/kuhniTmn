@@ -177,19 +177,30 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-
+}
+.headerPicture{
+	position: absolute;
+	z-index: 9;
+	height: 30%;
+	color: #FFF;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
 }
 .firsPage h1{
 	position: absolute;
-	width: 55%;
-	left: 0px;
+	height: 100px;
+	font-size: 60px;
+	line-height: 115px;
+	text-align: center;
+	width: 100%;
+	top: 0px;
 	right: 0px;
-	top: 5%;
-	padding: 15px;
-	margin: 0 auto;
-}
-.firsPage h1 img{
-	width: 50%;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
 }
 .firsPage section{
 	position: absolute;

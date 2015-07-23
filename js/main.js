@@ -93,9 +93,6 @@ function startApplication () {
 				},
 				afterRender: function(){
 					$('.bgvid').get(0).play();
-					$('.firstOffer').transition({ x: -320, delay: 0 }, 750, 'ease');
-					$('.secondOffer').transition({ x: -320, delay: 200 }, 750, 'ease');
-					$('.thirdOffer').transition({ x: -320, delay: 400 }, 750, 'ease');
 					console.log('Video fires after page rendered!')
 				},
 				afterResize: function(){},
