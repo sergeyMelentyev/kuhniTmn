@@ -5,7 +5,9 @@ var preLoaderView = $('.preLoaderView'),
 	svgBackGroundComplete = $('.svgBackGroundComplete'),
 	timeoutID,
 	fullpage = $('#fullpage'),
-	mainContantWrapper = $('.mainContantWrapper');
+	mainContantWrapper = $('.mainContantWrapper'),
+	secondPageHeader = $('.secondPage header'),
+	secondPageIconsWrapper = $('.secondPageIconsWrapper');
 
 var myVivus = new Vivus('svgBackGroundDrawingId', {
     type: 'delayed',
@@ -88,6 +90,8 @@ function startApplication () {
 				},
 				afterLoad: function(anchorLink, index){
 					if(anchorLink == 'Quality'){
+						secondPageHeader.transition({ y: -50, opacity: 80 }, 1000);
+						secondPageIconsWrapper.transition({ y: -50, opacity: 80 }, 1000);
 						console.log('Second page animation fires!');
 					};
 				},

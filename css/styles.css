@@ -195,95 +195,104 @@ p{
 	font-size: 60px;
 	line-height: 115px;
 	text-align: center;
-	width: 100%;
+	width: 75%;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
+	opacity: 0.8;
 }
-.firsPage section{
+.headerPicture{
 	position: absolute;
-	width: 40%;
-	height: 40%;
+	height: 200px;
+	width: 950px;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	margin: auto;
-	font-size: 2em;
-	line-height: 3em;
-	text-align: left;
-}
-.firsPage h2{
-	position: absolute;
-	width: 1000px;
-	height: 100px;
-	text-align: left;
-	padding-left: 100px;
-	border-radius: 10px;
-	background-color: rgba(220, 220, 220, 0.5);
-	box-shadow: 0px 0px 15px 3px #FFF;
-	cursor: pointer;
-}
-.firstOffer{
-	position: absolute;
-	top: 0px;
-	left: 310px;
-}
-.secondOffer{
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 310px;
-	margin: auto;
-}
-.thirdOffer{
-	position: absolute;
-	bottom: 0px;
-	left: 310px;
-}
-				.firstOffer img{
-					position: absolute;
-					width: 120px;
-					top: 0px;
-					bottom: 0px;
-					left: -70px;
-					margin: auto;
-				}
-				.secondOffer img{
-					position: absolute;
-					width: 120px;
-					top: 0px;
-					bottom: 0px;
-					left: -70px;
-					margin: auto;
-				}
-				.thirdOffer img{
-					position: absolute;
-					width: 120px;
-					top: 0px;
-					bottom: 0px;
-					left: -70px;
-					margin: auto;
-				}
-
-
-
-
-
-
-.secondPage h1{
-	position: absolute;
 	left: 0px;
+	margin: auto;
+	opacity: 0.8;
+}
+		.firsPage section{
+			position: absolute;
+			color: #FFF;
+			right: 0px;
+			bottom: 20%;
+			left: 0px;
+			font-size: 30px;
+			line-height: 30px;
+			margin-left: 20px;
+		}
+		.firstOffer, .secondOffer, .thirdOffer{
+			float: left;
+			margin: auto;
+			opacity: 0.8;
+		}
+		.firstOffer{
+			position: relative;
+			width: 310px;
+			height: 30px;
+			padding-left: 75px;
+		}
+		.firstOffer img{
+			position: absolute;
+			width: 70px;
+			left: 0px;
+			top: -70%;
+		}
+		.secondOffer{
+			position: relative;
+			width: 190px;
+			height: 30px;
+			padding-left: 75px;
+		}
+		.secondOffer img{
+			position: absolute;
+			width: 70px;
+			left: 0px;
+			top: -95%;
+		}
+		.thirdOffer{
+			position: relative;
+			width: 270px;
+			height: 30px;
+			padding-left: 75px;
+		}
+		.thirdOffer img{
+			position: absolute;
+			width: 70px;
+			left: 0px;
+			top: -80%;
+		}
+
+
+.secondPageIconsWrapper{
+	position: absolute;
+	height: 600px;
+	width: 120px;
+	top: 50px;
+	right: 720px;
+	bottom: 0px;
+	opacity: 0;
+	margin: auto;
+	opacity: 1;
+	font-size: 40px;
+	line-height: 120px;
+}
+
+.secondPage header{
+	position: absolute;
+	height: 600px;
+	width: 720px;
+	top: 50px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+	opacity: 0;
+	font-size: 40px;
+	line-height: 120px;
 	color: #FFF;
-	font-size: 2.5em;
-}
-.secondPage h2{
-	position: absolute;
-	left: 0px;
-	color: #FFF;
-	font-size: 2.5em;
 }
 
 
@@ -324,7 +333,7 @@ p{
     }
 }
 @media screen and (max-width: 1020px) {
-	header, figure, .bgvid {
+	#fullpage, .preLoaderView {
        display: none;
     }
     h1{
