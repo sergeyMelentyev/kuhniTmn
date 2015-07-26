@@ -251,7 +251,7 @@ p{
 			position: absolute;
 			width: 70px;
 			left: 0px;
-			top: -95%;
+			top: -65%;
 		}
 		.thirdOffer{
 			position: relative;
@@ -263,40 +263,58 @@ p{
 			position: absolute;
 			width: 70px;
 			left: 0px;
-			top: -80%;
+			top: -65%;
 		}
 
 
 .secondPageIconsWrapper{
 	position: absolute;
 	height: 600px;
-	width: 120px;
+	width: 80px;
 	top: 50px;
-	right: 720px;
+	right: 760px;
 	bottom: 0px;
 	opacity: 0;
 	margin: auto;
-	opacity: 1;
 	font-size: 40px;
 	line-height: 120px;
 }
 
-.secondPage header{
-	position: absolute;
-	height: 600px;
-	width: 720px;
-	top: 50px;
-	right: 0px;
-	bottom: 0px;
-	margin: auto;
-	opacity: 0;
-	font-size: 40px;
-	line-height: 120px;
-	color: #FFF;
+		.secondPageIconsWrapper ul li{
+			line-height: 50px;
+		}
+		.secondPageIconsWrapper ul li img{
+			width: 100px;
+		}
+				.secondPage header{
+					position: absolute;
+					height: 600px;
+					width: 720px;
+					top: 50px;
+					right: 0px;
+					bottom: 0px;
+					margin: auto;
+					opacity: 0;
+					font-size: 40px;
+					line-height: 110px;
+					color: #FFF;
+				}
+
+.thirdPage{
+	position: relative;
+	background: url('../img/thirdPage/bg.jpg'); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-
-
-
+.backSvgWrapper{
+	width: 80%;
+	margin: auto;
+}
+#backSvgWrapperDraw{
+	opacity: 0;
+}
 
 @media screen and (max-width: 568px) {
     header, figure {

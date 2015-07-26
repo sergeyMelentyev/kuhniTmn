@@ -37,7 +37,7 @@ function startApplication () {
 		pleaseWaitWrapper.css({'display': 'none'});
 	}, 1000);
 	readyToLaunch.click(function(){
-		preLoaderView.transition({ scale: 0.9 }, 250).transition({ y: -1000, opacity: 0 }, 500);
+		preLoaderView.transition({ scale: 0.9 }, 250).transition({ y: -1000, opacity: 0 }, 1000);
 		setTimeout(function(){
 			mainContantWrapper.css({'overflow': 'initial'});
 			mainContantWrapper.css({'height': 'auto'});
@@ -94,6 +94,15 @@ function startApplication () {
 						secondPageIconsWrapper.transition({ y: -50, opacity: 80 }, 1000);
 						console.log('Second page animation fires!');
 					};
+					if (anchorLink == 'Portfolio') {
+						$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
+						var thirdsPageVivus = new Vivus('backSvgWrapperDraw', {
+					    type: 'async',
+					    duration: 500},
+					    function(){
+					    	console.log('Ресуем на доске');
+					    });
+					};
 				},
 				afterRender: function(){
 					$('.bgvid').get(0).play();
@@ -106,3 +115,11 @@ function startApplication () {
 			}, 600);
 	});
   };
+
+
+
+
+
+
+
+
