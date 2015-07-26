@@ -316,6 +316,31 @@ p{
 	opacity: 0;
 }
 
+.leftSvgHeader{
+	position: absolute;
+	width: 300px;
+	z-index: 9;
+	top: 30px;
+	left: 20px;
+}
+.leftSvgHeader img{
+	width: 100%;
+}
+.rightSvgHeader{
+	position: absolute;
+	width: 300px;
+	z-index: 9;
+	top: 60px;
+	right: 20px;
+}
+.rightSvgHeader img{
+	width: 100%;
+}
+
+
+
+
+
 @media screen and (max-width: 568px) {
     header, figure {
        display: none;

@@ -7,7 +7,8 @@ var preLoaderView = $('.preLoaderView'),
 	fullpage = $('#fullpage'),
 	mainContantWrapper = $('.mainContantWrapper'),
 	secondPageHeader = $('.secondPage header'),
-	secondPageIconsWrapper = $('.secondPageIconsWrapper');
+	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
+	backSvgWrapperDrawCounter = 0;
 
 var myVivus = new Vivus('svgBackGroundDrawingId', {
     type: 'delayed',
@@ -95,13 +96,16 @@ function startApplication () {
 						console.log('Second page animation fires!');
 					};
 					if (anchorLink == 'Portfolio') {
-						$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
-						var thirdsPageVivus = new Vivus('backSvgWrapperDraw', {
-					    type: 'async',
-					    duration: 500},
-					    function(){
-					    	console.log('Ресуем на доске');
-					    });
+						if (backSvgWrapperDrawCounter === 0) {
+					    	backSvgWrapperDrawCounter++;
+							$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
+							var thirdsPageVivus = new Vivus('backSvgWrapperDraw', {
+						    type: 'async',
+						    duration: 500},
+						    function(){
+						    	console.log('Ресуем на доске');
+						    });
+						};
 					};
 				},
 				afterRender: function(){
