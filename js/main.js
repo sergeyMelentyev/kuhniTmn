@@ -8,7 +8,9 @@ var preLoaderView = $('.preLoaderView'),
 	mainContantWrapper = $('.mainContantWrapper'),
 	secondPageHeader = $('.secondPage header'),
 	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
-	backSvgWrapperDrawCounter = 0;
+	backSvgWrapperDrawCounter = 0,
+	leftSvgHeader = $('.leftSvgHeader'),
+	rightSvgHeader = $('.rightSvgHeader');
 
 var myVivus = new Vivus('svgBackGroundDrawingId', {
     type: 'delayed',
@@ -49,10 +51,10 @@ function startApplication () {
 				lockAnchors: false,
 				anchors:['Sales', 'Quality', 'Portfolio', 'Goods', 'Contacts'],
 				navigation: false,
-				navigationPosition: 'right',
+				navigationPosition: '',
 				navigationTooltips: ['firstSlide', 'secondSlide'],
 				showActiveTooltip: false,
-				slidesNavigation: true,
+				slidesNavigation: false,
 				slidesNavPosition: 'bottom',
 				css3: true,
 				scrollingSpeed: 700,
@@ -63,7 +65,7 @@ function startApplication () {
 				easingcss3: 'ease',
 				loopBottom: false,
 				loopTop: false,
-				loopHorizontal: true,
+				loopHorizontal: false,
 				continuousVertical: false,
 				normalScrollElements: '#element1, .element2',
 				scrollOverflow: false,
@@ -72,7 +74,7 @@ function startApplication () {
 				keyboardScrolling: true,
 				animateAnchor: true,
 				recordHistory: true,
-				controlArrows: true,
+				controlArrows: false,
 				verticalCentered: true,
 				resize : false,
 				sectionsColor : [''],
@@ -96,11 +98,14 @@ function startApplication () {
 						console.log('Second page animation fires!');
 					};
 					if (anchorLink == 'Portfolio') {
+						leftSvgHeader.transition({ rotate: '45deg' }, 10);
+						leftSvgHeader.transition({ x: 130, opacity: 100, rotate: '0deg' }, 1000);
+						rightSvgHeader.transition({ x: -100, opacity: 100 }, 1000);
 						if (backSvgWrapperDrawCounter === 0) {
 					    	backSvgWrapperDrawCounter++;
 							$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
 							var thirdsPageVivus = new Vivus('backSvgWrapperDraw', {
-						    type: 'async',
+						    type: 'delayed',
 						    duration: 500},
 						    function(){
 						    	console.log('Ресуем на доске');
@@ -113,17 +118,13 @@ function startApplication () {
 					console.log('Video fires after page rendered!')
 				},
 				afterResize: function(){},
-				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+					if (slideAnchor == 'slide2') {
+						console.log('secondSlide fires!!!');
+					};
+				},
 				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 			});	
 			}, 600);
 	});
   };
-
-
-
-
-
-
-
-
