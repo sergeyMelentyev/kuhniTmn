@@ -315,13 +315,21 @@ p{
 #backSvgWrapperDraw{
 	opacity: 0;
 }
+.galleryHeaderWrapper{
+	position: absolute;
+	width: 50%;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+}
 
 .leftSvgHeader{
 	position: absolute;
 	width: 300px;
 	z-index: 9;
 	top: 30px;
-	left: 20px;
+	left: -100px;
+	opacity: 0;
 }
 .leftSvgHeader img{
 	width: 100%;
@@ -331,11 +339,30 @@ p{
 	width: 300px;
 	z-index: 9;
 	top: 60px;
-	right: 20px;
+	right: -100px;
+	opacity: 0;
 }
 .rightSvgHeader img{
 	width: 100%;
 }
+.leftPreviewGallery{
+
+}
+.bottomInfoBtn{
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+	left: 0px;
+	margin: auto;
+	width: 500px;
+	height: 50px;
+	color: #FFF;
+	line-height: 50px;
+	font-size: 25px;
+	background-color: grey;
+}
+
+
 
 
 
@@ -375,6 +402,34 @@ p{
 		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1020px) {
 	#fullpage, .preLoaderView {
        display: none;
@@ -409,7 +464,6 @@ p{
 		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
     }
 }
-
 
 @media screen and (min-width: 1021px) {
 	.smallDevices{
