@@ -10,7 +10,12 @@ var preLoaderView = $('.preLoaderView'),
 	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
 	backSvgWrapperDrawCounter = 0,
 	leftSvgHeader = $('.leftSvgHeader'),
-	rightSvgHeader = $('.rightSvgHeader');
+	rightSvgHeader = $('.rightSvgHeader'),
+	thirdPageGalleryWrapper = $('.thirdPageGalleryWrapper'),
+	thirdPageGalleryReady = $('.thirdPageGalleryReady'),
+	thirdPageGalleryScetch = $('.thirdPageGalleryScetch'),
+	thirdPageGalleryReadyIcon = $('.thirdPageGalleryReadyIcon'),
+	thirdPageGalleryScetchIcon = $('.thirdPageGalleryScetchIcon');
 
 var myVivus = new Vivus('svgBackGroundDrawingId', {
     type: 'delayed',
@@ -98,8 +103,7 @@ function startApplication () {
 						console.log('Second page animation fires!');
 					};
 					if (anchorLink == 'Portfolio') {
-						leftSvgHeader.transition({ rotate: '45deg' }, 10);
-						leftSvgHeader.transition({ x: 130, opacity: 100, rotate: '0deg' }, 1000);
+						leftSvgHeader.transition({ x: 130, opacity: 100 }, 1000);
 						rightSvgHeader.transition({ x: -100, opacity: 100 }, 1000);
 						if (backSvgWrapperDrawCounter === 0) {
 					    	backSvgWrapperDrawCounter++;
@@ -123,8 +127,115 @@ function startApplication () {
 						console.log('secondSlide fires!!!');
 					};
 				},
-				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+					if (slideIndex == 0 && nextSlideIndex == 1 && direction == 'right') {
+						setTimeout(function(){
+							thirdPageGalleryWrapper.css({'visibility': 'initial'});
+							thirdPageGalleryScetchIcon.transition({ x: '200px', opacity: 0.2 }, 500);
+							if (thirdPageGalleryReadyIcon.hasClass('activeGallery')) {
+								thirdPageGalleryReadyIcon.transition({ x: '0px', opacity: 0.9 }, 500);
+								thirdPageGalleryReady.css({'visibility': 'initial'}).transition({ opacity: 1 }, 500);
+								thirdPageGalleryScetch.css({'visibility': 'hidden'}).transition({ opacity: 0 }, 500);
+							} else {
+								return false;
+							};
+							if (thirdPageGalleryScetchIcon.hasClass('activeGallery')) {
+								thirdPageGalleryScetchIcon.transition({ x: '0px', opacity: 0.9 }, 500);
+								thirdPageGalleryReady.css({'visibility': 'hidden'}).transition({ opacity: 0 }, 500);
+								thirdPageGalleryScetch.css({'visibility': 'initial'}).transition({ opacity: 1 }, 500);
+							} else {
+								return false;
+							};
+						}, 350);
+						$('.thirdPageGalleryReadyIcon img').click(function(){
+							console.log('ReadyIcon');
+							if (thirdPageGalleryReadyIcon.hasClass('activeGallery')) {
+								return false;
+							} else {
+								thirdPageGalleryReadyIcon.transition({ x: '0px', opacity: 0.9 }, 500);
+								thirdPageGalleryReadyIcon.addClass('activeGallery');
+								thirdPageGalleryScetchIcon.transition({ x: '200px', opacity: 0.2 }, 500);
+								thirdPageGalleryScetchIcon.removeClass('activeGallery');
+								thirdPageGalleryReady.css({'visibility': 'initial'}).transition({ opacity: 1 }, 500);
+								thirdPageGalleryReady.css({'display': 'initial'}).transition({ opacity: 1 }, 500);
+								thirdPageGalleryScetch.css({'display': 'none'}).transition({ opacity: 0 }, 500);
+							};
+						});
+						$('.thirdPageGalleryScetchIcon img').click(function(){
+							console.log('ScetchIcon');
+							if (thirdPageGalleryScetchIcon.hasClass('activeGallery')) {
+								return false;
+							} else {
+								thirdPageGalleryScetchIcon.transition({ x: '0px', opacity: 0.9 }, 500);
+								thirdPageGalleryScetchIcon.addClass('activeGallery');
+								thirdPageGalleryReadyIcon.transition({ x: '200px', opacity: 0.2 }, 500);
+								thirdPageGalleryReadyIcon.removeClass('activeGallery');
+								thirdPageGalleryScetch.css({'visibility': 'initial'}).transition({ opacity: 1 }, 500);
+								thirdPageGalleryScetch.css({'display': 'initial'}).transition({ opacity: 1 }, 500);
+								thirdPageGalleryReady.css({'display': 'none'}).transition({ opacity: 0 }, 500);
+							};
+						});
+						console.log('gallery is ready for view!');
+					};
+					if (slideIndex == 1 && nextSlideIndex == 0 && direction == 'left') {
+						thirdPageGalleryWrapper.css({'visibility': 'hidden'});
+						testFunctionEnd();
+						console.log('welcome back!!!');
+					};
+					console.log("onLeave--" + "slideIndex: " + slideIndex + " nextSlideIndex: " + nextSlideIndex + " direction: " +  direction);
+				}
 			});	
 			}, 600);
 	});
   };
+
+$('.slider-for').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	fade: true,
+	asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	asNavFor: '.slider-for',
+	dots: false,
+	centerMode: true,
+	prevArrow: $('.prevBtnReady'),
+	nextArrow: $('.nextBtnReady'),
+	centerPadding: '0px',
+	focusOnSelect: true
+});
+
+$('.slider-for-scetch').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	fade: true,
+	asNavFor: '.slider-nav-scetch'
+});
+$('.slider-nav-scetch').slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	asNavFor: '.slider-for-scetch',
+	dots: false,
+	centerMode: true,
+	prevArrow: $('.prevBtnScetch'),
+	nextArrow: $('.nextBtnScetch'),
+	centerPadding: '0px',
+	focusOnSelect: true
+});
+
+var testFunctionEnd = function(){
+	thirdPageGalleryReady.css({'display': 'initial'});
+	thirdPageGalleryScetch.css({'display': 'initial'});
+	thirdPageGalleryReady.css({'visibility': 'hidden'});
+	thirdPageGalleryScetch.css({'visibility': 'hidden'});
+	if (thirdPageGalleryScetchIcon.hasClass('activeGallery')) {
+		thirdPageGalleryReadyIcon.transition({ x: '0px', opacity: 0.9 }, 500);
+		thirdPageGalleryScetchIcon.removeClass('activeGallery');
+		thirdPageGalleryReadyIcon.addClass('activeGallery');
+	};
+};
+
