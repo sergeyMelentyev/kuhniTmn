@@ -361,6 +361,68 @@ p{
 	font-size: 25px;
 	background-color: grey;
 }
+.thirdPageGalleryWrapper{
+	position: absolute;
+	z-index: 99999;
+	width: 820px;
+	height: 700px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+}
+.thirdPageGalleryWrapper img{
+	width: 100%;
+}
+.thirdPageGalleryReadyIcon{
+	position: absolute;
+	cursor: pointer;
+	width: 20%;
+	top: -175px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+}
+.thirdPageGalleryReadyIcon img{
+	width: 90%;
+}
+.slider-nav{
+	padding: 30px 25px;
+}
+.slider-nav div{
+	padding: 0px 10px;
+}
+.thirdPageGalleryScetchIcon{
+	position: absolute;
+	cursor: pointer;
+	width: 20%;
+	top: -175px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+}
+.slider-nav-scetch{
+	padding: 30px 25px;
+}
+.slider-nav-scetch div{
+	padding: 0px 10px;
+}
+.thirdPageGalleryWrapper{
+	visibility: hidden;
+}
+.thirdPageGalleryReady{
+	opacity: 0;
+	display: hidden;
+}
+.thirdPageGalleryScetch{
+	opacity: 0;
+	visibility: hidden;
+}
+.activeGallery{
+	opacity: 100;
+}
+
 
 
 
@@ -402,33 +464,6 @@ p{
 		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 1020px) {
 	#fullpage, .preLoaderView {
