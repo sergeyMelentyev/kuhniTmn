@@ -35,7 +35,7 @@ var drawSvgMainTheme = function(){
 var drawSvgThirdPage = function(){
 		thirdPageVivus = new Vivus('backSvgWrapperDraw', {
 	    type: 'delayed',
-	    duration: 500},
+	    duration: 1000},
 	    function(){
 	    	console.log('QUALITY PAGE SVG DONE');
 	    });	
