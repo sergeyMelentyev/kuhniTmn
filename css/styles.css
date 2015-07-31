@@ -169,6 +169,104 @@ p{
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 }
+
+
+
+
+
+.zeroPageBg{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	background: url('../img/zeroPage/01.jpg'); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.zeroPageQuestionWrapper{
+	position: absolute;
+	width: 380px;
+	height: 500px;
+	bottom: 20%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	perspective: 1000px;
+		-webkit-perspective: 1000px;
+}
+.zeroPageQuestion{
+	z-index: 9;
+	width: 100%;
+}
+.zeroPageQuestionShadow{
+	position: absolute;
+	z-index: -9;
+	width: 200px;
+	height: 200px;
+	bottom: -90px;
+	left: -25px;
+	right: 0px;
+	margin: auto;
+	border-radius: 100px;
+	transform: rotateX( 85deg );
+		-webkit-transform: rotateX( 85deg );
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.8) 0%, rgba(3,3,3,0.8) 15%, rgba(255,255,255,0) 70%);
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.8) 0%,rgba(3,3,3,0.8) 15%,rgba(255,255,255,0) 70%);
+	background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.8) 0%,rgba(3,3,3,0.8) 15%,rgba(255,255,255,0) 70%);
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.8) 0%,rgba(3,3,3,0.8) 15%,rgba(255,255,255,0) 70%);
+	background: radial-gradient(ellipse at center,  rgba(0,0,0,0.8) 0%,rgba(3,3,3,0.8) 15%,rgba(255,255,255,0) 70%);
+}
+.zeroPage header{
+	color: #fff;
+	font-size: 55px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+.firstQuestion{
+	position: absolute;
+	top: 10%;
+	left: 50px;
+	width: 570px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+.firstQuestionMid{
+	position: absolute;
+	top: 15%;
+	left: 480px;
+	width: 350px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+.firstQuestionEnd{
+	position: absolute;
+	bottom: 20%;
+	right: 90px;
+	width: 330px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+.secondQuestion{
+	position: absolute;
+	opacity: 0;
+}
+.thirdQuestion{
+	position: absolute;
+	opacity: 0;
+}
+.lastQuestion{
+	position: absolute;
+	opacity: 0;
+}
+
+
+
+
 .firsPage header{
 	position: absolute;
 	color: #FFF;
@@ -371,6 +469,7 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
+	overflow: hidden;
 }
 .thirdPageGalleryWrapper img{
 	width: 100%;
