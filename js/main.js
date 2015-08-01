@@ -5,6 +5,7 @@ var preLoaderView = $('.preLoaderView'),
 	readyToLaunch = $('.readyToLaunch'),
 	svgBackGroundComplete = $('.svgBackGroundComplete'),
 	setGalleryViewCounter = 0,
+	zeroPageCounter = 0,
 	timeoutID,
 	myVivus,
 	thirdPageVivus,
@@ -19,31 +20,48 @@ var preLoaderView = $('.preLoaderView'),
 	thirdPageGalleryReady = $('.thirdPageGalleryReady'),
 	thirdPageGalleryScetch = $('.thirdPageGalleryScetch'),
 	thirdPageGalleryReadyIcon = $('.thirdPageGalleryReadyIcon'),
-	thirdPageGalleryScetchIcon = $('.thirdPageGalleryScetchIcon');
+	thirdPageGalleryScetchIcon = $('.thirdPageGalleryScetchIcon'),
+	zeroPageQuestionWrapper = $('.zeroPageQuestionWrapper'),
+	firstQuestion = $('.firstQuestion'),
+	firstQuestionMid = $('.firstQuestionMid'),
+	firstQuestionEnd = $('.firstQuestionEnd'),
+	secondQuestion = $('.secondQuestion'),
+	thirdQuestion = $('.thirdQuestion'),
+	zeroPageBg = $('.zeroPageBg'),
+	arrowDown = $('.arrowDown'),
+	arrowUp = $('.arrowUp'),
+	arrowUpDown = $('.arrowUpDown'),
+	arrowUpDownRight = $('.arrowUpDownRight'),
+	arrowUpDownLeft = $('.arrowUpDownLeft'),
+	lastQuestion = $('.lastQuestion');
 
 
 /* SVG ANIMATION  */
 var drawSvgMainTheme = function(){
 		myVivus = new Vivus('svgBackGroundDrawingId', {
-	    type: 'delayed',
-	    duration: 1000},
+	    type: 'oneByOne',
+	    duration: 2000
+		},
 	    function(){
 	    	console.log('MAIN SVG BG DONE');
 	    });
 };
 
 var drawSvgThirdPage = function(){
-		thirdPageVivus = new Vivus('backSvgWrapperDraw', {
-	    type: 'delayed',
-	    duration: 1000},
-	    function(){
-	    	console.log('QUALITY PAGE SVG DONE');
-	    });	
+	var svg = new Walkway({
+	  selector: '#backSvgWrapperDraw',
+	  duration: '5000',
+	  easing: function (t) {
+	   return t<.5 ? 2*t*t : -1+(4-2*t)*t
+	  }
+	});
+svg.draw();
 };
 
 /* MAIN APP STARTER */
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false); 
+    allAnimationStartPosition();
     drawSvgMainTheme();
     delayedStart();
     console.log('ONLOAD EVENT FIRES'); 
@@ -64,7 +82,7 @@ function startApplication () {
 		pleaseWaitWrapper.css({'display': 'none'});
 	}, 1000);
 	readyToLaunch.click(function(){
-		preLoaderView.transition({ scale: 0.9 }, 250).transition({ y: -1000, opacity: 0 }, 1000);
+		preLoaderView.transition({ y: -4000, delay: 200 }, 3000);
 		setTimeout(function(){
 			mainContantWrapper.css({'overflow': 'initial'});
 			mainContantWrapper.css({'height': 'auto'});
@@ -140,6 +158,9 @@ function startApplication () {
 					};
 				},
 				afterLoad: function(anchorLink, index){
+					if (anchorLink == 'Question') {
+						zeroPageAnimation();
+					};
 					if(anchorLink == 'Quality'){
 						secondPageHeader.transition({ y: -50, opacity: 80 }, 1000);
 						secondPageIconsWrapper.transition({ y: -50, opacity: 80 }, 1000);
@@ -218,6 +239,49 @@ $('.slider-nav-scetch').slick({
 });
 
 /* ANIMATION FUNCTIONS */
+var allAnimationStartPosition = function(){
+	zeroPageQuestionWrapper.transition({ x: -300, opacity: 0 }, 10);
+	firstQuestion.transition({ x: -200, opacity: 0 }, 10);
+	firstQuestionMid.transition({ x: -100, opacity: 0 }, 10);
+	firstQuestionEnd.transition({ x: 100, opacity: 0 }, 10);
+	secondQuestion.transition({ y: -50, opacity: 0 }, 10);
+	thirdQuestion.transition({ y: 100, opacity: 0, rotate: '180deg' }, 10);
+	lastQuestion.transition({ y: 100, opacity: 0, rotate: '180deg' }, 10);
+};
+var zeroPageAnimation = function(){
+	if (zeroPageCounter === 0) {
+		zeroPageCounter++;
+		zeroPageQuestionWrapper.transition({ x: 0, opacity: 100, delay: 2000 }, 4000, 'easeOutQuad');
+		firstQuestion.transition({ x: 0, opacity: 100, delay: 500 }, 4000, 'easeOutQuad');
+		firstQuestionMid.transition({ x: 0, opacity: 100, delay: 500 }, 4000, 'easeOutQuad');
+		firstQuestionEnd.transition({ x: 0, opacity: 100, delay: 3000 }, 3000, 'easeOutQuad', function() {
+			zeroPageAnimationStageTwo();
+		});
+	};
+};
+var zeroPageAnimationStageTwo = function(){
+		zeroPageQuestionWrapper.transition({ y: 50, opacity: 100, delay: 500 }, 1000, 'easeOutQuad');
+		firstQuestion.transition({ y: 100, opacity: 0, delay: 500 }, 4000, 'easeOutQuad');
+		firstQuestionMid.transition({ y: 150, opacity: 0, delay: 500 }, 4000, 'easeOutQuad');
+		firstQuestionEnd.transition({ y: 200, opacity: 0, delay: 500 }, 4000, 'easeOutQuad');
+	setTimeout(function() {
+		secondQuestion.transition({ y: 0, opacity: 100, delay: 400 }, 1000, 'easeOutQuad');
+		zeroPageQuestionWrapper.transition({ y: 100, opacity: 0, delay: 1000 }, 1000, 'easeOutQuad');
+	}, 500);
+	setTimeout(function() {
+		secondQuestion.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+		thirdQuestion.transition({ y: 0, opacity: 100, delay: 600 }, 2000, 'easeOutQuad');
+		zeroPageQuestionWrapper.transition({ y: 50, opacity: 0, delay: 100 }, 1000, 'easeOutQuad');
+		zeroPageBg.transition({ scale: 2 }, 500, 'easeOutCubic').transition({ rotate: '180deg' }, 1000, 'easeOutCubic').transition({ scale: 1 }, 500, 'easeOutCubic');
+	}, 4000);
+	setTimeout(function() {
+		lastQuestion.transition({ y: 0, opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
+		arrowDown.	transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
+	}, 4500);
+};
+
+
+
 var animationStartFirstSlide = function(){ // Переход к первому слайду галереи
 	setGalleryViewCounter = 1;
 	setTimeout(function(){

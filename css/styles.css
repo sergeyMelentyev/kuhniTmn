@@ -52,13 +52,22 @@ table {
 a{
 	text-decoration: none;
 	color: inherit;
-	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
 }
 p{
 	font-size: 16px;
 
 }
+.arrowDown{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
+
 .preLoaderView{
 	position: fixed;
 	width: 100%;
@@ -162,18 +171,16 @@ p{
 .bgvid{
 	position: absolute;
 	z-index: -9;
-	top: 50%;
+	top: 0px;
+	bottom: 0px;
 	left: 50%;
-	min-height: 100%;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
+	height: 100%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
-
-
-
-
-
+.zeroPage {
+	position: relative;
+}
 .zeroPageBg{
 	position: absolute;
 	width: 100%;
@@ -190,7 +197,7 @@ p{
 	position: absolute;
 	width: 380px;
 	height: 500px;
-	bottom: 20%;
+	bottom: 10%;
 	left: 0px;
 	right: 0px;
 	margin: auto;
@@ -226,8 +233,9 @@ p{
 }
 .firstQuestion{
 	position: absolute;
-	top: 10%;
-	left: 50px;
+	z-index: 9;
+	top: 35%;
+	left: 10%;
 	width: 570px;
 	height: 60px;
 	line-height: 60px;
@@ -235,8 +243,9 @@ p{
 }
 .firstQuestionMid{
 	position: absolute;
-	top: 15%;
-	left: 480px;
+	z-index: 9;
+	top: 45%;
+	left: 30%;
 	width: 350px;
 	height: 60px;
 	line-height: 60px;
@@ -244,8 +253,9 @@ p{
 }
 .firstQuestionEnd{
 	position: absolute;
-	bottom: 20%;
-	right: 90px;
+	z-index: 9;
+	bottom: 30%;
+	right: 10%;
 	width: 330px;
 	height: 60px;
 	line-height: 60px;
@@ -253,15 +263,39 @@ p{
 }
 .secondQuestion{
 	position: absolute;
-	opacity: 0;
+	z-index: 9;
+	top: 10%;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+	width: 700px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
 }
 .thirdQuestion{
 	position: absolute;
-	opacity: 0;
+	z-index: 9;
+	bottom: 35%;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
 }
 .lastQuestion{
 	position: absolute;
-	opacity: 0;
+	z-index: 9;
+	right: 0px;
+	left: 0px;
+	top: 10%;
+	margin: auto;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
 }
 
 
@@ -521,6 +555,14 @@ p{
 .activeGallery{
 	opacity: 100;
 }
+.fifthPage{
+	background-color: green;
+}
+
+
+
+
+
 
 
 
