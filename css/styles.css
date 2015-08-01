@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: 'Open Sans Condensed', sans-serif;
+	overflow: hidden;
 	color: #5A5A5A;
 }
 ol, ul {
@@ -59,6 +60,51 @@ p{
 	font-size: 16px;
 
 }
+.developedBy{
+	position: absolute;
+	z-index: 99999;
+	left: -175px;
+	bottom: -175px;
+	width: 250px;
+	height: 250px;
+	border-radius: 150px;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #000;
+	box-shadow: 0px 0px 5px #000, 0px 0px 10px #000, 0px 0px 15px #FFF;
+}
+.developedByQuestion{
+	position: absolute;
+	z-index: 999999;
+	font-size: 30px;
+	left: 15px;
+	bottom: 10px;
+	color: #FFF;
+	cursor: pointer;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF, 0px 0px 15px #FFF, 0px 0px 20px #FFF, 0px 0px 25px #FFF, 0px 0px 30px #FFF;
+}
+.developedByText{
+	position: absolute;
+	z-index: 999999;
+	width: 100px;
+	height: 55px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	left: 10px;
+	bottom: 30px;
+	color: #FFF;
+	cursor: pointer;
+	display: none;
+	opacity: 0;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF, 0px 0px 15px #FFF, 0px 0px 20px #FFF, 0px 0px 25px #FFF;
+}
+#developer{
+	width: 300px;
+	height: 300px;
+	opacity: 0;
+}
 .arrowDown{
 	position: absolute;
 	z-index: 999;
@@ -67,7 +113,6 @@ p{
 	bottom: 10px;
 	opacity: 0;
 }
-
 .preLoaderView{
 	position: fixed;
 	width: 100%;
@@ -507,26 +552,19 @@ p{
 	font-size: 40px;
 	line-height: 120px;
 }
-
-		.secondPageIconsWrapper ul li{
-			line-height: 50px;
-		}
-		.secondPageIconsWrapper ul li img{
-			width: 100px;
-		}
-				.secondPage header{
-					position: absolute;
-					height: 600px;
-					width: 720px;
-					top: 50px;
-					right: 0px;
-					bottom: 0px;
-					margin: auto;
-					opacity: 0;
-					font-size: 40px;
-					line-height: 110px;
-					color: #FFF;
-				}
+	.secondPage header{
+		position: absolute;
+		height: 600px;
+		width: 720px;
+		top: 50px;
+		right: 0px;
+		bottom: 0px;
+		margin: auto;
+		opacity: 0;
+		font-size: 40px;
+		line-height: 110px;
+		color: #FFF;
+	}
 
 .thirdPage{
 	position: relative;

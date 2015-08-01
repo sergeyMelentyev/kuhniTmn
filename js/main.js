@@ -455,3 +455,85 @@ $('.thirdPageGalleryScetchIcon img').click(function(){ // Клик в галер
 		thirdPageGalleryReady.css({'display': 'none'}).transition({ opacity: 0 }, 500);
 	};
 });
+
+
+
+
+
+var c = document.getElementById("developer");
+var ctx = c.getContext("2d");
+
+//making the canvas full screen
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+//chinese characters - taken from the unicode charset
+var chinese = "01";
+//converting the string into an array of single characters
+chinese = chinese.split("");
+
+var font_size = 40;
+var columns = c.width/font_size; //number of columns for the rain
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+	drops[x] = 1; 
+
+//drawing the characters
+function draw()
+{
+	//Black BG for the canvas
+	//translucent BG to show trail
+	ctx.fillStyle = "rgba(0, 0, 0, 0.03)";
+	ctx.fillRect(0, 0, c.width, c.height);
+	
+	ctx.fillStyle = "#FFF"; //green text
+	ctx.font = font_size + "px arial";
+	//looping over drops
+	for(var i = 0; i < drops.length; i++)
+	{
+		//a random chinese character to print
+		var text = chinese[Math.floor(Math.random()*chinese.length)];
+		//x = i*font_size, y = value of drops[i]*font_size
+		ctx.fillText(text, i*font_size, drops[i]*font_size);
+		
+		//sending the drop back to the top randomly after it has crossed the screen
+		//adding a randomness to the reset to make the drops scattered on the Y axis
+		if(drops[i]*font_size > c.height && Math.random() > 0.975)
+			drops[i] = 0;
+		
+		//incrementing Y coordinate
+		drops[i]++;
+	}
+}
+setInterval(draw, 100);
+var developedByQuestion = $('.developedByQuestion'),
+	developedByText = $('.developedByText'),
+	developedBy = $('.developedBy'),
+	developer = $('#developer'),
+	developerCounter = 0;
+
+$('.developedBy, .developedByQuestion').click(function(){
+	if (developerCounter === 0) {
+		developedByText.css({'display': 'initial'});
+		developedByQuestion.transition({ opacity: 0 }, 350);
+		developedBy.transition({ x: 65, y: -65 }, 750);
+		developer.transition({ opacity: 0.4 }, 500);
+		developedByText.transition({ opacity: 100, delay: 500 }, 1500);
+		developerCounter++;
+	} else {
+		developedByText.css({'display': 'none'});
+		developedByText.transition({ opacity: 0 }, 500);
+		developedBy.transition({ x: 0, y: 0 }, 750);
+		developer.transition({ opacity: 0 }, 500);
+		developedByQuestion.transition({ opacity: 100 }, 500);
+		developerCounter = 0;
+	};	
+});
+
+
+
+
+
