@@ -264,43 +264,33 @@ p{
 .secondQuestion{
 	position: absolute;
 	z-index: 9;
-	top: 10%;
+	top: 5%;
 	right: 0px;
 	left: 0px;
 	margin: auto;
-	width: 700px;
-	height: 60px;
-	line-height: 60px;
+	width: 900px;
+	height: 310px;
+	font-size: 100px;
+	line-height: 100px;
 	text-align: center;
 }
 .thirdQuestion{
 	position: absolute;
 	z-index: 9;
-	bottom: 35%;
+	bottom: 15%;
 	right: 0px;
 	left: 0px;
 	margin: auto;
 	width: 1000px;
-	height: 60px;
-	line-height: 60px;
-	text-align: center;
-}
-.lastQuestion{
-	position: absolute;
-	z-index: 9;
-	right: 0px;
-	left: 0px;
-	top: 10%;
-	margin: auto;
-	width: 200px;
-	height: 60px;
-	line-height: 60px;
+	font-size: 100px;
+	height: 300px;
+	line-height: 100px;
 	text-align: center;
 }
 
 
 
-
+/* FIRST PAGE STARTS HERE */
 .firsPage header{
 	position: absolute;
 	color: #FFF;
@@ -310,93 +300,199 @@ p{
 	left: 0px;
 	margin: auto;
 }
-.headerPicture{
+.finalRenderedIcons{
 	position: absolute;
-	z-index: 9;
-	height: 30%;
 	color: #FFF;
+	right: 0px;
+	bottom: 10%;
+	left: 0px;
+	font-size: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+.firstOffer, .secondOffer, .thirdOffer{
+	float: left;
+	margin: auto;
+	opacity: 0.8;
+}
+.firstOffer{
+	position: relative;
+	width: 310px;
+	height: 30px;
+	padding-left: 75px;
+}
+.firstOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -70%;
+}
+.secondOffer{
+	position: relative;
+	width: 190px;
+	height: 30px;
+	padding-left: 75px;
+}
+.secondOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -65%;
+}
+.thirdOffer{
+	position: relative;
+	width: 270px;
+	height: 30px;
+	padding-left: 75px;
+}
+.thirdOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -65%;
+}
+.hottestQuestionWrapperFirstPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+.hottestQuestionFirstPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+.firstPageMedalOne{
+	position: absolute;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
+	width: 150px;
 }
-.firsPage h1{
+.firstPageSaleWrapper{
 	position: absolute;
-	height: 100px;
-	font-size: 60px;
-	line-height: 115px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPageSaleIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPageSaleContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 400px;
+	height: 160px;
+	color: #fff;
 	text-align: center;
-	width: 75%;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	margin: auto;
-	opacity: 0.8;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
 }
-.headerPicture{
+.firstPageMedalTwo{
 	position: absolute;
-	height: 200px;
-	width: 950px;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	opacity: 0.8;
+	width: 150px;
 }
-		.firsPage section{
-			position: absolute;
-			color: #FFF;
-			right: 0px;
-			bottom: 20%;
-			left: 0px;
-			font-size: 30px;
-			line-height: 30px;
-			margin-left: 20px;
-		}
-		.firstOffer, .secondOffer, .thirdOffer{
-			float: left;
-			margin: auto;
-			opacity: 0.8;
-		}
-		.firstOffer{
-			position: relative;
-			width: 310px;
-			height: 30px;
-			padding-left: 75px;
-		}
-		.firstOffer img{
-			position: absolute;
-			width: 70px;
-			left: 0px;
-			top: -70%;
-		}
-		.secondOffer{
-			position: relative;
-			width: 190px;
-			height: 30px;
-			padding-left: 75px;
-		}
-		.secondOffer img{
-			position: absolute;
-			width: 70px;
-			left: 0px;
-			top: -65%;
-		}
-		.thirdOffer{
-			position: relative;
-			width: 270px;
-			height: 30px;
-			padding-left: 75px;
-		}
-		.thirdOffer img{
-			position: absolute;
-			width: 70px;
-			left: 0px;
-			top: -65%;
-		}
+.firstPagePresentWrapper{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPagePresentIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPagePresentContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 410px;
+	height: 210px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+
+
+
+
+
+.firstPageMedalThree{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 150px;
+}
+.firstPageCreditWrapper{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPageCreditIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.firstPageCreditContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 350px;
+	height: 210px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+
 
 
 .secondPageIconsWrapper{

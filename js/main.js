@@ -33,8 +33,26 @@ var preLoaderView = $('.preLoaderView'),
 	arrowUpDown = $('.arrowUpDown'),
 	arrowUpDownRight = $('.arrowUpDownRight'),
 	arrowUpDownLeft = $('.arrowUpDownLeft'),
-	lastQuestion = $('.lastQuestion');
+	hottestQuestionWrapperFirstPage = $('.hottestQuestionWrapperFirstPage'),
+	hottestQuestionFirstPage = $('.hottestQuestionFirstPage'),
+	
+	firstOffer = $('.firstOffer'),
+	firstPageSaleWrapper = $('.firstPageSaleWrapper'),
+	firstPageSaleIcon = $('.firstPageSaleIcon'),
+	firstPageSaleContext = $('.firstPageSaleContext'),
+	firstPageMedalOne = $('.firstPageMedalOne'),
 
+	secondOffer = $('.secondOffer'),
+	firstPageMedalTwo = $('.firstPageMedalTwo'),
+	firstPagePresentWrapper = $('.firstPagePresentWrapper'),
+	firstPagePresentIcon = $('.firstPagePresentIcon'),
+	firstPagePresentContext = $('.firstPagePresentContext'),
+
+	thirdOffer = $('.thirdOffer'),
+	firstPageMedalThree = $('.firstPageMedalThree'),
+	firstPageCreditWrapper = $('.firstPageCreditWrapper'),
+	firstPageCreditIcon = $('.firstPageCreditIcon'),
+	firstPageCreditContext = $('.firstPageCreditContext');
 
 /* SVG ANIMATION  */
 var drawSvgMainTheme = function(){
@@ -82,7 +100,7 @@ function startApplication () {
 		pleaseWaitWrapper.css({'display': 'none'});
 	}, 1000);
 	readyToLaunch.click(function(){
-		preLoaderView.transition({ y: -4000, delay: 200 }, 3000);
+		preLoaderView.transition({ y: -4000, delay: 50 }, 3000); // CUSTOMIZE STARTING DELAY HERE
 		setTimeout(function(){
 			mainContantWrapper.css({'overflow': 'initial'});
 			mainContantWrapper.css({'height': 'auto'});
@@ -160,6 +178,9 @@ function startApplication () {
 				afterLoad: function(anchorLink, index){
 					if (anchorLink == 'Question') {
 						zeroPageAnimation();
+					};
+					if (anchorLink == 'Sales') {
+						firstPageAnimation();
 					};
 					if(anchorLink == 'Quality'){
 						secondPageHeader.transition({ y: -50, opacity: 80 }, 1000);
@@ -246,7 +267,26 @@ var allAnimationStartPosition = function(){
 	firstQuestionEnd.transition({ x: 100, opacity: 0 }, 10);
 	secondQuestion.transition({ y: -50, opacity: 0 }, 10);
 	thirdQuestion.transition({ y: 100, opacity: 0, rotate: '180deg' }, 10);
-	lastQuestion.transition({ y: 100, opacity: 0, rotate: '180deg' }, 10);
+	hottestQuestionWrapperFirstPage.transition({ x: 50, opacity: 0 }, 10);
+	hottestQuestionFirstPage.transition({ x: -75, opacity: 0 }, 10);
+	
+	firstOffer.transition({ opacity: 0 }, 10);
+	firstPageMedalOne.transition({ scale: 0.8, opacity: 0 }, 10);
+	firstPageSaleWrapper.transition({ x: -150, y: 50, opacity: 0, rotate: '-45deg' }, 10);
+	firstPageSaleIcon.transition({ x: 150, y: 50, opacity: 0, rotate: '45deg' }, 10);
+	firstPageSaleContext.transition({ opacity: 0 }, 10);
+
+	secondOffer.transition({ opacity: 0 }, 10);
+	firstPageMedalTwo.transition({ scale: 0.8, opacity: 0 }, 10);
+	firstPagePresentWrapper.transition({ x: -150, y: 50, opacity: 0, rotate: '-45deg' }, 10);
+	firstPagePresentIcon.transition({ x: 150, y: 50, opacity: 0, rotate: '45deg' }, 10);
+	firstPagePresentContext.transition({ opacity: 0 }, 10);
+
+	thirdOffer.transition({ opacity: 0 }, 10);
+	firstPageMedalThree.transition({ scale: 0.8, opacity: 0 }, 10);
+	firstPageCreditWrapper.transition({ x: -150, y: 50, opacity: 0, rotate: '-45deg' }, 10);
+	firstPageCreditIcon.transition({ x: 150, y: 50, opacity: 0, rotate: '45deg' }, 10);
+	firstPageCreditContext.transition({ opacity: 0 }, 10);
 };
 var zeroPageAnimation = function(){
 	if (zeroPageCounter === 0) {
@@ -273,13 +313,82 @@ var zeroPageAnimationStageTwo = function(){
 		thirdQuestion.transition({ y: 0, opacity: 100, delay: 600 }, 2000, 'easeOutQuad');
 		zeroPageQuestionWrapper.transition({ y: 50, opacity: 0, delay: 100 }, 1000, 'easeOutQuad');
 		zeroPageBg.transition({ scale: 2 }, 500, 'easeOutCubic').transition({ rotate: '180deg' }, 1000, 'easeOutCubic').transition({ scale: 1 }, 500, 'easeOutCubic');
-	}, 4000);
+	}, 5000);
 	setTimeout(function() {
-		lastQuestion.transition({ y: 0, opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
-		arrowDown.	transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
-	}, 4500);
+		arrowDown.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
+	}, 6000);
 };
 
+var firstPageAnimation = function(){
+	hottestQuestionWrapperFirstPage.transition({ x: 0, opacity: 100 }, 1200, 'easeOutQuad');
+	hottestQuestionFirstPage.transition({ x: 0, opacity: 100 }, 1500, 'easeOutQuad');
+	setTimeout(function() {
+		firstPageMedalOne.transition({ scale: 1, opacity: 100 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
+		setTimeout(function() {
+			firstPageSaleWrapper.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 1500);
+			firstPageSaleIcon.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 2000);
+			setTimeout(function() {
+				firstPageSaleContext.transition({ opacity: 100 }, 1000);
+				setTimeout(function() {
+					secondStage();
+					firstPageMedalOne.transition({ opacity: 0 }, 1000);
+					firstPageSaleWrapper.transition({ opacity: 0 }, 1000);
+					firstPageSaleIcon.transition({ opacity: 0 }, 1000);
+					firstPageSaleContext.transition({ opacity: 0 }, 1000);
+					firstOffer.transition({ opacity: 100 }, 1000);
+				}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+			}, 1000); // Пауза. Отрисовали описание скидки
+		}, 2000); // Пауза. Отрисовали скидку по центру
+	}, 2000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
+	
+	var secondStage = function(){
+	setTimeout(function() {
+			firstPageMedalTwo.transition({ scale: 1, opacity: 100, delay: 500 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
+			setTimeout(function() {
+				firstPagePresentWrapper.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 1500);
+				firstPagePresentIcon.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 2000);
+				setTimeout(function() {
+					firstPagePresentContext.transition({ opacity: 100 }, 1000);
+					setTimeout(function() {
+						thirdStage();
+						firstPageMedalTwo.transition({ opacity: 0 }, 1000);
+						firstPagePresentWrapper.transition({ opacity: 0 }, 1000);
+						firstPagePresentIcon.transition({ opacity: 0 }, 1000);
+						firstPagePresentContext.transition({ opacity: 0 }, 1000);
+						secondOffer.transition({ opacity: 100 }, 1000);
+					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+				}, 1000); // Пауза. Отрисовали описание скидки
+			}, 3000); // Пауза. Отрисовали скидку по центру
+		}, 2000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
+	};
+
+	var thirdStage = function(){
+		setTimeout(function() {
+			firstPageMedalThree.transition({ scale: 1, opacity: 100, delay: 500 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
+			setTimeout(function() {
+				firstPageCreditWrapper.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 1500);
+				firstPageCreditIcon.transition({ x: 0, y: 0, opacity: 100, rotate: '0deg' }, 2000);
+				setTimeout(function() {
+					firstPageCreditContext.transition({ opacity: 100 }, 1000);
+					setTimeout(function() {
+						firstPageMedalThree.transition({ opacity: 0 }, 1000);
+						firstPageCreditWrapper.transition({ opacity: 0 }, 1000);
+						firstPageCreditIcon.transition({ opacity: 0 }, 1000);
+						firstPageCreditContext.transition({ opacity: 0 }, 1000);
+						thirdOffer.transition({ opacity: 100 }, 1000);
+						finalAction();
+					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+				}, 1000); // Пауза. Отрисовали описание скидки
+			}, 3000); // Пауза. Отрисовали скидку по центру
+		}, 2000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
+	};
+	var finalAction = function(){
+		setTimeout(function() {
+			hottestQuestionWrapperFirstPage.transition({ y: 200 }, 2000, 'easeOutQuad');
+			hottestQuestionFirstPage.transition({ y: 200 }, 2000, 'easeOutQuad');
+		}, 2000); // Пауза. Заголовок опустился в центре
+	};
+};
 
 
 var animationStartFirstSlide = function(){ // Переход к первому слайду галереи
