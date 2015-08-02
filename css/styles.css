@@ -215,7 +215,7 @@ p{
 }
 .bgvid{
 	position: absolute;
-	z-index: -9;
+	z-index: -99;
 	top: 0px;
 	bottom: 0px;
 	left: 50%;
@@ -322,7 +322,8 @@ p{
 .thirdQuestion{
 	position: absolute;
 	z-index: 9;
-	bottom: 15%;
+	top: 0px;
+	bottom: 0px;
 	right: 0px;
 	left: 0px;
 	margin: auto;
@@ -332,10 +333,27 @@ p{
 	line-height: 100px;
 	text-align: center;
 }
+.lastQuestionWrapper{
+	position: absolute;
+	z-index: 9;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+	width: 80%;
+}
 
 
-
-/* FIRST PAGE STARTS HERE */
+										/* FIRST PAGE STARTS HERE */
+.firstPageArrowUpDown{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
 .firsPage header{
 	position: absolute;
 	color: #FFF;
@@ -355,42 +373,42 @@ p{
 	line-height: 30px;
 	margin-left: 20px;
 }
-.firstOffer, .secondOffer, .thirdOffer{
+.firstPageFirstOffer, .firstPageSecondOffer, .firstPageThirdOffer{
 	float: left;
 	margin: auto;
 	opacity: 0.8;
 }
-.firstOffer{
+.firstPageFirstOffer{
 	position: relative;
 	width: 310px;
 	height: 30px;
 	padding-left: 75px;
 }
-.firstOffer img{
+.firstPageFirstOffer img{
 	position: absolute;
 	width: 70px;
 	left: 0px;
 	top: -70%;
 }
-.secondOffer{
+.firstPageSecondOffer{
 	position: relative;
 	width: 190px;
 	height: 30px;
 	padding-left: 75px;
 }
-.secondOffer img{
+.firstPageSecondOffer img{
 	position: absolute;
 	width: 70px;
 	left: 0px;
 	top: -65%;
 }
-.thirdOffer{
+.firstPageThirdOffer{
 	position: relative;
 	width: 270px;
 	height: 30px;
 	padding-left: 75px;
 }
-.thirdOffer img{
+.firstPageThirdOffer img{
 	position: absolute;
 	width: 70px;
 	left: 0px;
@@ -492,11 +510,6 @@ p{
 	font-size: 50px;
 	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
 }
-
-
-
-
-
 .firstPageMedalThree{
 	position: absolute;
 	top: 0px;
@@ -539,32 +552,282 @@ p{
 }
 
 
-
-.secondPageIconsWrapper{
+									/* SECOND PAGE STARTS HERE */
+.secondPageArrowUpDown{
 	position: absolute;
-	height: 600px;
-	width: 80px;
-	top: 50px;
-	right: 760px;
-	bottom: 0px;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
 	opacity: 0;
-	margin: auto;
-	font-size: 40px;
-	line-height: 120px;
 }
-	.secondPage header{
-		position: absolute;
-		height: 600px;
-		width: 720px;
-		top: 50px;
-		right: 0px;
-		bottom: 0px;
-		margin: auto;
-		opacity: 0;
-		font-size: 40px;
-		line-height: 110px;
-		color: #FFF;
-	}
+.secondPage header{
+	position: absolute;
+	z-index: 999999999999999;
+	color: #FFF;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+}
+.finalRenderedIcons{
+	position: absolute;
+	color: #FFF;
+	right: 0px;
+	bottom: 10%;
+	left: 0px;
+	font-size: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+.secondPageFirstOffer, .secondPageSecondOffer, .secondPageThirdOffer, .secondPageFourthOffer{
+	float: left;
+	margin: auto;
+	opacity: 0.8;
+}
+.secondPageFirstOffer{
+	position: relative;
+	width: 250px;
+	height: 30px;
+	padding-left: 75px;
+}
+.secondPageFirstOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -70%;
+}
+.secondPageSecondOffer{
+	position: relative;
+	width: 190px;
+	height: 30px;
+	padding-left: 75px;
+}
+.secondPageSecondOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -65%;
+}
+.secondPageThirdOffer{
+	position: relative;
+	width: 230px;
+	height: 30px;
+	padding-left: 75px;
+}
+.secondPageThirdOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -65%;
+}
+.secondPageFourthOffer{
+	position: relative;
+	width: 300px;
+	height: 30px;
+	padding-left: 75px;
+}
+.secondPageFourthOffer img{
+	position: absolute;
+	width: 70px;
+	left: 0px;
+	top: -65%;
+}
+.hottestQuestionWrapperSecondPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+.hottestQuestionSecondPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+.secondPageMedalOne{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 150px;
+}
+.secondPageFactoryWrapper{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageFactoryIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageFactoryContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 400px;
+	height: 160px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+.secondPageMedalTwo{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 150px;
+}
+.secondPageNatureWrapper{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageNatureIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageNatureContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 410px;
+	height: 210px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+.secondPageMedalThree{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 150px;
+}
+.secondPageGarantyWrapper{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageGarantyIcon{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPageGarantyContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 350px;
+	height: 210px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+.secondPageMedalFour{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 150px;
+}
+.secondPagePersonalWrapper{
+	position: absolute;
+	z-index: 99;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPagePersonalIcon{
+	position: absolute;
+	z-index: 9;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+}
+.secondPagePersonalContext{
+	position: absolute;
+	top: 0px;
+	right: 3%;
+	bottom: 0px;
+	margin: auto;
+	width: 350px;
+	height: 210px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+}
+
+
+									/* THIRD PAGE STARTS HERE */
+.thirdPageArrow{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
+
+
+
+
+
 
 .thirdPage{
 	position: relative;
@@ -611,22 +874,6 @@ p{
 .rightSvgHeader img{
 	width: 100%;
 }
-.leftPreviewGallery{
-
-}
-.bottomInfoBtn{
-	position: absolute;
-	right: 0px;
-	bottom: 20px;
-	left: 0px;
-	margin: auto;
-	width: 500px;
-	height: 50px;
-	color: #FFF;
-	line-height: 50px;
-	font-size: 25px;
-	background-color: grey;
-}
 .thirdPageGalleryWrapper{
 	position: absolute;
 	z-index: 99999;
@@ -645,10 +892,9 @@ p{
 .thirdPageGalleryReadyIcon{
 	position: absolute;
 	cursor: pointer;
-	width: 20%;
-	top: -175px;
-	right: 0px;
-	left: 0px;
+	width: 25%;
+	top: 0px;
+	left: -190px;
 	margin: auto;
 }
 .thirdPageGalleryReadyIcon img{
@@ -663,10 +909,9 @@ p{
 .thirdPageGalleryScetchIcon{
 	position: absolute;
 	cursor: pointer;
-	width: 20%;
-	top: -175px;
-	right: 0px;
-	left: 0px;
+	width: 25%;
+	top: -20px;
+	right: -20px;
 	margin: auto;
 }
 .slider-nav-scetch{
