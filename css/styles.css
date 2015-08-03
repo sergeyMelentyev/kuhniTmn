@@ -563,7 +563,6 @@ p{
 }
 .secondPage header{
 	position: absolute;
-	z-index: 999999999999999;
 	color: #FFF;
 	top: 0px;
 	right: 0px;
@@ -823,12 +822,14 @@ p{
 	bottom: 10px;
 	opacity: 0;
 }
-
-
-
-
-
-
+.thirdPageSlideArrow{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
 .thirdPage{
 	position: relative;
 	background: url('../img/thirdPage/bg.jpg'); 
@@ -851,7 +852,6 @@ p{
 	left: 0px;
 	height: 100vh;
 }
-
 .leftSvgHeader{
 	position: absolute;
 	width: 300px;
@@ -886,7 +886,7 @@ p{
 	margin: auto;
 	overflow: hidden;
 }
-.thirdPageGalleryWrapper img{
+.thirdPageGalleryReady img, .thirdPageGalleryScetch div img{
 	width: 100%;
 }
 .thirdPageGalleryReadyIcon{
@@ -914,6 +914,9 @@ p{
 	right: -20px;
 	margin: auto;
 }
+.thirdPageGalleryScetchIcon img{
+	width: 90%;
+}
 .slider-nav-scetch{
 	padding: 30px 25px;
 }
@@ -937,6 +940,73 @@ p{
 .fifthPage{
 	background-color: green;
 }
+.prevBtnReady{
+	position: absolute;
+	width: 75px;
+	left: -90px;
+	bottom: 110px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.nextBtnReady{
+	position: absolute;
+	width: 75px;
+	right: -90px;
+	bottom: 110px;
+	cursor: pointer;
+}
+.prevBtnScetch{
+	position: absolute;
+	width: 75px;
+	left: -90px;
+	bottom: 110px;
+	cursor: pointer;
+}
+.nextBtnScetch{
+	position: absolute;
+	width: 75px;
+	right: -90px;
+	bottom: 110px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+									/* FOURTH PAGE STARTS HERE */
+.fourthPageArrow{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
+.secondPage header{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+}
+.hottestQuestionWrapperFourthPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+.hottestQuestionFourthPage{
+	position: absolute;
+	width: 1000px;
+	top: 2%;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+
+
+
 
 
 
