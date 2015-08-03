@@ -8,6 +8,7 @@ var preLoaderView = $('.preLoaderView'),
 	zeroPageCounter = 0,
 	firstPageCounter = 0,
 	secondPageCounter = 0,
+	fourthPageCounter = 0,
 	timeoutID,
 	myVivus,
 	thirdPageVivus,
@@ -96,10 +97,13 @@ var preLoaderView = $('.preLoaderView'),
 	secondPageArrowUpDown = $('.secondPageArrowUpDown'),
 	
 	/* THIRD PAGE */
-	thirdPageArrow = $('.thirdPageArrow');
+	thirdPageArrow = $('.thirdPageArrow'),
+	thirdPageSlideArrow = $('.thirdPageSlideArrow'),
 
-
-
+	/* FOURTH PAGE */
+	fourthPageArrow = $('.fourthPageArrow'),
+	hottestQuestionWrapperFourthPage = $('.hottestQuestionWrapperFourthPage'),
+	hottestQuestionFourthPage = $('.hottestQuestionFourthPage');
 
 									/* SVG ANIMATION  */
 
@@ -247,6 +251,9 @@ function startApplication () {
 							drawSvgThirdPage();
 						};
 					};
+					if (anchorLink == 'Goods') {
+						fourthPageAnimation();
+					};
 				},
 				afterRender: function(){},
 				afterResize: function(){},
@@ -372,6 +379,10 @@ var allAnimationStartPosition = function(){
 	secondPagePersonalWrapper.transition({ x: -150, y: 50, opacity: 0, rotate: '-45deg' }, 10);
 	secondPagePersonalIcon.transition({ x: 150, y: 50, opacity: 0, rotate: '45deg' }, 10);
 	secondPagePersonalContext.transition({ opacity: 0 }, 10);
+
+	/* FOURTH PAGE */
+	hottestQuestionWrapperFourthPage.transition({ x: 50, opacity: 0 }, 10);
+	hottestQuestionFourthPage.transition({ x: -75, opacity: 0 }, 10);
 
 };
 
@@ -589,8 +600,26 @@ var secondPageAnimation = function(){
 };
 
 
+										/* FOURTH PAGE ANIMATION */
+
+var fourthPageAnimation = function(){
+	if (fourthPageCounter === 0 ) {
+		fourthPageCounter++
+		fourthPageArrow.transition({ opacity: 100, delay: 10000 }, 1000, 'easeOutQuad');		
+		hottestQuestionWrapperFourthPage.transition({ x: 0, opacity: 100 }, 1200, 'easeOutQuad');
+		hottestQuestionFourthPage.transition({ x: 0, opacity: 100 }, 1500, 'easeOutQuad');
+
+
+
+
+	};
+};
+
+
 var animationStartFirstSlide = function(){ // Переход к первому слайду галереи
 	setGalleryViewCounter = 1;
+	thirdPageArrow.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+	thirdPageSlideArrow.transition({ opacity: 100 }, 1000, 'easeOutQuad');
 	setTimeout(function(){
 		thirdPageGalleryWrapper.css({'visibility': 'initial'});
 		thirdPageGalleryScetchIcon.transition({ x: '200px', opacity: 0.2 }, 500);
@@ -623,6 +652,8 @@ var animationEndFirstSlide = function(){ // Выход из первого сл�
 		thirdPageGalleryScetchIcon.removeClass('activeGallery');
 		thirdPageGalleryReadyIcon.addClass('activeGallery');
 	};
+	thirdPageArrow.transition({ opacity: 100 }, 1000, 'easeOutQuad');
+	thirdPageSlideArrow.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 	console.log('GALLERY OFF');
 };
 
@@ -644,7 +675,7 @@ $('.thirdPageGalleryScetchIcon img').click(function(){ // Клик в галер
 	if (thirdPageGalleryScetchIcon.hasClass('activeGallery')) {
 		return false;
 	} else {
-		thirdPageGalleryScetchIcon.transition({ x: '-870px', opacity: 0.9 }, 1000);
+		thirdPageGalleryScetchIcon.transition({ x: '-840px', opacity: 0.9 }, 1000);
 		thirdPageGalleryScetchIcon.addClass('activeGallery');
 		thirdPageGalleryReadyIcon.transition({ x: '1010px', opacity: 0.2 }, 1000);
 		thirdPageGalleryReadyIcon.removeClass('activeGallery');
