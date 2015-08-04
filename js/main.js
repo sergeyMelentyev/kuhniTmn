@@ -104,6 +104,24 @@ var preLoaderView = $('.preLoaderView'),
 	fourthPageArrow = $('.fourthPageArrow'),
 	hottestQuestionWrapperFourthPage = $('.hottestQuestionWrapperFourthPage'),
 	hottestQuestionFourthPage = $('.hottestQuestionFourthPage'),
+	
+	fourthPageCenterAnimationWrapperImg = $('.fourthPageCenterAnimationWrapperImg'),
+
+	fourthPageFirstContent = $('.fourthPageFirstContent'),
+	fourthPageSecondContent = $('.fourthPageSecondContent'),
+	fourthPageThirdContent = $('.fourthPageThirdContent'),
+	fourthPageFourthContent = $('.fourthPageFourthContent'),
+	fourthPageFifthContent = $('.fourthPageFifthContent'),
+	fourthPageSixthContent = $('.fourthPageSixthContent'),
+	
+	graphicLeftTop = $('.graphicLeftTop'),
+	graphicLeftCenter = $('.graphicLeftCenter'),
+	graphicLeftBottom = $('.graphicLeftBottom'),
+	graphicRightTop = $('.graphicRightTop'),
+	graphicRightCenter = $('.graphicRightCenter'),
+	graphicRightBottom = $('.graphicRightBottom'),
+
+	fourthPageFinalContent = $('.fourthPageFinalContent'),
 
 	/* FIFTH PAGE */
 	fifthPageArrow = $('.fifthPageArrow');
@@ -612,13 +630,43 @@ var secondPageAnimation = function(){
 var fourthPageAnimation = function(){
 	if (fourthPageCounter === 0 ) {
 		fourthPageCounter++
-		fourthPageArrow.transition({ opacity: 100, delay: 10000 }, 1000, 'easeOutQuad');		
-		hottestQuestionWrapperFourthPage.transition({ x: 0, opacity: 100 }, 1200, 'easeOutQuad');
-		hottestQuestionFourthPage.transition({ x: 0, opacity: 100 }, 1500, 'easeOutQuad');
-
-
-
-
+		hottestQuestionWrapperFourthPage.transition({ x: 0, opacity: 1 }, 1200, 'easeOutQuad');
+		hottestQuestionFourthPage.transition({ x: 0, opacity: 1 }, 1500, 'easeOutQuad');
+		setTimeout(function() {
+			fourthPageCenterAnimationWrapperImg.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+			fourthPageFirstContent.transition({ opacity: 1, delay: 2000 }, 1000, 'easeOutQuad');
+			graphicRightBottom.transition({ opacity: 0.5, delay: 3000 }, 1000, 'easeOutQuad');
+			setTimeout(function() {
+				fourthPageFirstContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+				fourthPageSecondContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+				graphicLeftTop.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+				setTimeout(function() {
+					fourthPageSecondContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+					fourthPageThirdContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+					graphicLeftCenter.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+						setTimeout(function() {
+							fourthPageThirdContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+							fourthPageFourthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+							graphicLeftBottom.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+								setTimeout(function() {
+									fourthPageFourthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+									fourthPageFifthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+									graphicRightTop.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+										setTimeout(function() {
+										fourthPageFifthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+										fourthPageSixthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+										graphicRightCenter.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+											setTimeout(function() {
+												fourthPageSixthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
+												fourthPageFinalContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+												fourthPageArrow.transition({ opacity: 1, delay: 2000 }, 1000, 'easeOutQuad');
+											}, 4000); // Пауза. Появляется мебель
+										}, 4000); // Пауза. Появляется мебель
+								}, 4000); // Пауза. Появляется раковина
+						}, 4000); // Пауза. Появляется вытяжка
+					}, 4000); // Пауза. Появляется вытяжка
+			}, 7000); // Пауза. Появляется духовой шкаф
+		}, 2000); // Пауза. Появляется центральная сцена, появилась варочная поверхность
 	};
 };
 
@@ -696,32 +744,6 @@ $('.thirdPageGalleryScetchIcon img').click(function(){ // Клик в галер
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var c = document.getElementById("developer");
 var ctx = c.getContext("2d");
 c.height = window.innerHeight;
@@ -765,8 +787,4 @@ $('.developedBy, .developedByQuestion').click(function(){
 		developerCounter = 0;
 	};	
 });
-
-
-
-
 
