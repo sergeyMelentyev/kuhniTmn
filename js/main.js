@@ -103,7 +103,11 @@ var preLoaderView = $('.preLoaderView'),
 	/* FOURTH PAGE */
 	fourthPageArrow = $('.fourthPageArrow'),
 	hottestQuestionWrapperFourthPage = $('.hottestQuestionWrapperFourthPage'),
-	hottestQuestionFourthPage = $('.hottestQuestionFourthPage');
+	hottestQuestionFourthPage = $('.hottestQuestionFourthPage'),
+
+	/* FIFTH PAGE */
+	fifthPageArrow = $('.fifthPageArrow');
+
 
 									/* SVG ANIMATION  */
 
@@ -253,6 +257,9 @@ function startApplication () {
 					};
 					if (anchorLink == 'Goods') {
 						fourthPageAnimation();
+					};
+					if (anchorLink == 'Contacts') {
+						fifthPageArrow.transition({ opacity: 100, delay: 1500 }, 1000, 'easeOutQuad');
 					};
 				},
 				afterRender: function(){},
@@ -441,7 +448,7 @@ var firstPageAnimation = function(){
 						firstPageSaleIcon.transition({ opacity: 0 }, 1000);
 						firstPageSaleContext.transition({ opacity: 0 }, 1000);
 						firstPageFirstOffer.transition({ opacity: 100 }, 1000);
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 2000); // Пауза. Отрисовали скидку по центру
 		}, 3000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -460,7 +467,7 @@ var firstPageAnimation = function(){
 						firstPagePresentIcon.transition({ opacity: 0 }, 1000);
 						firstPagePresentContext.transition({ opacity: 0 }, 1000);
 						firstPageSecondOffer.transition({ opacity: 100 }, 1000);
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 3000); // Пауза. Отрисовали скидку по центру
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -480,7 +487,7 @@ var firstPageAnimation = function(){
 						firstPageCreditContext.transition({ opacity: 0 }, 1000);
 						firstPageThirdOffer.transition({ opacity: 100 }, 1000);
 						finalAction();
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 3000); // Пауза. Отрисовали скидку по центру
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -519,7 +526,7 @@ var secondPageAnimation = function(){
 						secondPageFactoryIcon.transition({ opacity: 0 }, 1000);
 						secondPageFactoryContext.transition({ opacity: 0 }, 1000);
 						secondPageFirstOffer.transition({ opacity: 100 }, 1000);
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 2000); // Пауза. Отрисовали скидку по центру
 		}, 3000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -539,7 +546,7 @@ var secondPageAnimation = function(){
 						secondPageNatureIcon.transition({ opacity: 0 }, 1000);
 						secondPageNatureContext.transition({ opacity: 0 }, 1000);
 						secondPageSecondOffer.transition({ opacity: 100 }, 1000);
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 3000); // Пауза. Отрисовали скидку по центру
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -560,7 +567,7 @@ var secondPageAnimation = function(){
 						secondPageGarantyContext.transition({ opacity: 0 }, 1000);
 						secondPageThirdOffer.transition({ opacity: 100 }, 1000);
 						secondPageFourthStage();
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 3000); // Пауза. Отрисовали скидку по центру
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -581,7 +588,7 @@ var secondPageAnimation = function(){
 						secondPagePersonalContext.transition({ opacity: 0 }, 1000);
 						secondPageFourthOffer.transition({ opacity: 100 }, 1000);
 						secondPageFinalAction();
-					}, 3000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
+					}, 5000); // Пауза. Все скорыли. Добавили первый ярлык внизу.
 				}, 1000); // Пауза. Отрисовали описание скидки
 			}, 3000); // Пауза. Отрисовали скидку по центру
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
@@ -721,7 +728,7 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 var chinese = "01";
 chinese = chinese.split("");
-var font_size = 40;
+var font_size = 35;
 var columns = c.width/font_size;
 var drops = [];
 for(var x = 0; x < columns; x++)
@@ -729,7 +736,7 @@ for(var x = 0; x < columns; x++)
 	function draw(){
 		ctx.fillStyle = "rgba(0, 0, 0, 0.03)";
 		ctx.fillRect(0, 0, c.width, c.height);
-		ctx.fillStyle = "#FFF";
+		ctx.fillStyle = "#0F0";
 		ctx.font = font_size + "px arial";
 		for(var i = 0; i < drops.length; i++){
 		var text = chinese[Math.floor(Math.random()*chinese.length)];
@@ -739,14 +746,14 @@ for(var x = 0; x < columns; x++)
 		drops[i]++;
 		};
 	};
-setInterval(draw, 100);
+setInterval(draw, 150);
 
 $('.developedBy, .developedByQuestion').click(function(){
 	if (developerCounter === 0) {
 		developedByText.css({'display': 'initial'});
 		developedByQuestion.transition({ opacity: 0 }, 350);
 		developedBy.transition({ x: 65, y: -65 }, 750);
-		developer.transition({ opacity: 0.4 }, 500);
+		developer.transition({ opacity: 0.6 }, 500);
 		developedByText.transition({ opacity: 100, delay: 500 }, 1500);
 		developerCounter++;
 	} else {

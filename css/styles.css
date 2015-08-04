@@ -301,7 +301,7 @@ p{
 	z-index: 9;
 	bottom: 30%;
 	right: 10%;
-	width: 330px;
+	width: 400px;
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
@@ -656,7 +656,7 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	width: 150px;
+	width: 200px;
 }
 .secondPageFactoryWrapper{
 	position: absolute;
@@ -696,7 +696,7 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	width: 150px;
+	width: 200px;
 }
 .secondPageNatureWrapper{
 	position: absolute;
@@ -736,7 +736,7 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	width: 150px;
+	width: 200px;
 }
 .secondPageGarantyWrapper{
 	position: absolute;
@@ -762,7 +762,7 @@ p{
 	right: 3%;
 	bottom: 0px;
 	margin: auto;
-	width: 350px;
+	width: 400px;
 	height: 210px;
 	color: #fff;
 	text-align: center;
@@ -776,7 +776,7 @@ p{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	width: 150px;
+	width: 200px;
 }
 .secondPagePersonalWrapper{
 	position: absolute;
@@ -1004,12 +1004,35 @@ p{
 	right: 0px;
 	margin: auto;
 }
+.fourthPageCenterAnimationWrapper img{
+	position: absolute;
+	width: 50%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	opacity: 0.6;
+}
 
 
-
-
-
-
+									/* FIFTH PAGE STARTS HERE */
+.fifthPage{
+	position: relative;
+	background: url('../img/fifthPage/contactsBg.jpg'); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.fifthPageArrow{
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0;
+}
 
 
 
