@@ -291,7 +291,7 @@ p{
 	z-index: 9;
 	top: 45%;
 	left: 30%;
-	width: 350px;
+	width: 450px;
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
@@ -1004,16 +1004,105 @@ p{
 	right: 0px;
 	margin: auto;
 }
-.fourthPageCenterAnimationWrapper img{
+.fourthPageCenterAnimationWrapper{
 	position: absolute;
-	width: 50%;
+	width: 55%;
+	height: 55%;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	opacity: 0.6;
+	color: #FFF;
 }
+.fourthPageCenterAnimationWrapperImg{
+	position: absolute;
+	width: 85%;
+	top: -55px;
+	right: -15px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	opacity: 0;
+}
+.fourthPageCenterHeader{
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+	opacity: 0;
+	display:-ms-flexbox;
+		-ms-flex-pack:center;
+		-ms-flex-align:center;
+	display:-moz-box;
+		-moz-box-pack:center;
+		-moz-box-align:center;
+	display:-webkit-box;
+		-webkit-box-pack:center;
+		-webkit-box-align:center;
+	display:box;
+		box-pack:center;
+		box-align:center;
+	}
+
+.graphicLeftTop{
+	position: absolute;
+	width: 150px;
+	top: 0px;
+	left: -100px;
+	margin: auto;
+	opacity: 0;
+}
+.graphicLeftCenter{
+	position: absolute;
+	width: 150px;
+	top: 0px;
+	left: -100px;
+	bottom: 0px;
+	margin: auto;
+	opacity: 0;
+}
+.graphicLeftBottom{
+	position: absolute;
+	width: 150px;
+	left: -100px;
+	bottom: 0px;
+	margin: auto;
+	opacity: 0;
+}
+.graphicRightTop{
+	position: absolute;
+	width: 150px;
+	right: -100px;
+	top: 0px;
+	margin: auto;
+	opacity: 0;
+}
+.graphicRightCenter{
+	position: absolute;
+	width: 150px;
+	right: -100px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	opacity: 0;
+}
+.graphicRightBottom{
+	position: absolute;
+	width: 150px;
+	right: -100px;
+	bottom: 0px;
+	margin: auto;
+	opacity: 0;
+}
+
 
 
 									/* FIFTH PAGE STARTS HERE */
