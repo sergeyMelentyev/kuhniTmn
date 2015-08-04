@@ -1,5 +1,5 @@
-Web-Application for a furniture factory.
-Essential technologies used by website: HTML5/CSS3, HTML5 Video, Vanila JavaScript, SVG, One-Page-Scroll with callBacks.
+Web-Application for a furniture factory.<br>
+Essential technologies used by the website: HTML5/CSS3, HTML5 Video, Vanila JavaScript, SVG, One-Page-Scroll with callBacks.
 You can find the latest version here www.kuhni-eva.ru
 
 Начал сборку легкого промо сайта для крупной Российской мебельной фабрики.<br>
