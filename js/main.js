@@ -124,7 +124,9 @@ var preLoaderView = $('.preLoaderView'),
 	fourthPageFinalContent = $('.fourthPageFinalContent'),
 
 	/* FIFTH PAGE */
-	fifthPageArrow = $('.fifthPageArrow');
+	fifthPageArrow = $('.fifthPageArrow'),
+	mapObject = $('.mapGis'),
+	mapObjectHover = $('.mapGis p');
 
 
 									/* SVG ANIMATION  */
@@ -253,6 +255,9 @@ function startApplication () {
 							animationStartFirstSlide();
 						};
 					};
+					if (index === 6 && nextIndex === 5) {
+						fifthPageAnimationEnd();
+					};
 				},
 				afterLoad: function(anchorLink, index){
 					if (anchorLink == 'Question') {
@@ -277,6 +282,7 @@ function startApplication () {
 						fourthPageAnimation();
 					};
 					if (anchorLink == 'Contacts') {
+						fifthPageAnimationStart();
 						fifthPageArrow.transition({ opacity: 100, delay: 1500 }, 1000, 'easeOutQuad');
 					};
 				},
@@ -623,8 +629,6 @@ var secondPageAnimation = function(){
 	};
 	};
 };
-
-
 										/* FOURTH PAGE ANIMATION */
 
 var fourthPageAnimation = function(){
@@ -669,6 +673,27 @@ var fourthPageAnimation = function(){
 		}, 2000); // Пауза. Появляется центральная сцена, появилась варочная поверхность
 	};
 };
+
+
+
+										/* FIFTH PAGE ANIMATION */
+
+var fifthPageAnimationStart = function(){
+	mapObject.css({'visibility': 'initial'});
+	mapObject.transition({ opacity: 1 }, 400, 'easeOutQuad');
+	mapObjectHover.click(function(){
+		console.log('mapObjectHover.mouseover');
+	});
+	mapObjectHover.mouseleave(function(){
+		console.log('mapObjectHover.mouseleave');
+	});
+};
+
+var fifthPageAnimationEnd = function(){
+	mapObject.transition({ opacity: 0 }, 200, 'easeOutQuad');
+	mapObject.css({'visibility': 'hidden'});
+};
+
 
 
 var animationStartFirstSlide = function(){ // Переход к первому слайду галереи
@@ -787,4 +812,3 @@ $('.developedBy, .developedByQuestion').click(function(){
 		developerCounter = 0;
 	};	
 });
-
