@@ -17,11 +17,26 @@
     <script src="js/vivus.js"></script>
    	<script src="http://cdn.jsdelivr.net/walkway/0.0.1/walkway.min.js"></script>
     <script src="js/jquery.fullPage.js"></script>
+    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script type="text/javascript">
+	    var map;
+	    DG.then(function () {
+	        map = DG.map('map', {
+	            center: [57.1315683, 65.5561094],
+	            zoom: 16
+	        });
+	        DG.marker([57.1315683, 65.5561094]).addTo(map).bindPopup('<p>ТЦ Новый Магнат <br> мебельная компания "ЕВА"</p>').openPopup();
+		    map.on('click', function(e) {
+		    	console.log(e.latlng);
+			});
+	    });
+	</script>
 </head>
 <body>
 <div class="developedBy"><canvas id="developer"></canvas></div>
 <div class="developedByQuestion">?</div>
 <div class="developedByText"><a href="http://www.privatewebtailor.com" target="_blank">Developed by Melentyev</a></div>
+<div id="map" class="mapGis"></div>
 
 	<div class='thirdPageGalleryWrapper'>
 		<div class="thirdPageGalleryReadyIcon activeGallery"><img src="img/thirdPage/readyGallery.png"></div>
@@ -3753,8 +3768,7 @@
 		<article class="section fifthPage">
 		<img class="fifthPageArrow" src="img/fifthPage/arrowUp.svg">
 			<header>
-				<h1></h1>
-				<h2></h2>
+				
 			</header>
 		</article>
 
