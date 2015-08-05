@@ -937,9 +937,6 @@ p{
 .activeGallery{
 	opacity: 100;
 }
-.fifthPage{
-	background-color: green;
-}
 .prevBtnReady{
 	position: absolute;
 	width: 75px;
@@ -1108,11 +1105,14 @@ p{
 									/* FIFTH PAGE STARTS HERE */
 .fifthPage{
 	position: relative;
-	background: url('../img/fifthPage/contactsBg.jpg'); 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+}
+.fifthPage header{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
 }
 .fifthPageArrow{
 	position: absolute;
@@ -1123,8 +1123,23 @@ p{
 	opacity: 0;
 }
 
-
-
+#map{
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	visibility: hidden;
+	opacity: 0;
+}
+#map p{
+	text-align: center;
+	cursor: pointer;
+}
 
 
 
