@@ -126,6 +126,7 @@ var preLoaderView = $('.preLoaderView'),
 	/* FIFTH PAGE */
 	fifthPageArrow = $('.fifthPageArrow'),
 	mapObject = $('.mapGis'),
+	contactsWrapper = $('.contactsWrapper'),
 	mapObjectHover = $('.mapGis p');
 
 
@@ -415,6 +416,8 @@ var allAnimationStartPosition = function(){
 	hottestQuestionWrapperFourthPage.transition({ x: 50, opacity: 0 }, 10);
 	hottestQuestionFourthPage.transition({ x: -75, opacity: 0 }, 10);
 
+	/* FOURTH PAGE */
+	contactsWrapper.transition({ x: -100, opacity: 0, perspective: '200px', rotateY: '-15deg' });
 };
 
 
@@ -639,27 +642,27 @@ var fourthPageAnimation = function(){
 		setTimeout(function() {
 			fourthPageCenterAnimationWrapperImg.transition({ opacity: 1 }, 1000, 'easeOutQuad');
 			fourthPageFirstContent.transition({ opacity: 1, delay: 2000 }, 1000, 'easeOutQuad');
-			graphicRightBottom.transition({ opacity: 0.5, delay: 3000 }, 1000, 'easeOutQuad');
+			graphicRightBottom.transition({ opacity: 0.7, delay: 3000 }, 1000, 'easeOutQuad');
 			setTimeout(function() {
 				fourthPageFirstContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 				fourthPageSecondContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-				graphicLeftTop.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+				graphicLeftTop.transition({ opacity: 0.7, delay: 1000 }, 1000, 'easeOutQuad');
 				setTimeout(function() {
 					fourthPageSecondContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 					fourthPageThirdContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-					graphicLeftCenter.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+					graphicLeftCenter.transition({ opacity: 0.7, delay: 1000 }, 1000, 'easeOutQuad');
 						setTimeout(function() {
 							fourthPageThirdContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 							fourthPageFourthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-							graphicLeftBottom.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+							graphicLeftBottom.transition({ opacity: 0.7, delay: 1000 }, 1000, 'easeOutQuad');
 								setTimeout(function() {
 									fourthPageFourthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 									fourthPageFifthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-									graphicRightTop.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+									graphicRightTop.transition({ opacity: 0.7, delay: 1000 }, 1000, 'easeOutQuad');
 										setTimeout(function() {
 										fourthPageFifthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 										fourthPageSixthContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-										graphicRightCenter.transition({ opacity: 0.5, delay: 1000 }, 1000, 'easeOutQuad');
+										graphicRightCenter.transition({ opacity: 0.7, delay: 1000 }, 1000, 'easeOutQuad');
 											setTimeout(function() {
 												fourthPageSixthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 												fourthPageFinalContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
@@ -680,18 +683,17 @@ var fourthPageAnimation = function(){
 
 var fifthPageAnimationStart = function(){
 	mapObject.css({'visibility': 'initial'});
-	mapObject.transition({ opacity: 1 }, 400, 'easeOutQuad');
-	mapObjectHover.click(function(){
-		console.log('mapObjectHover.mouseover');
-	});
-	mapObjectHover.mouseleave(function(){
-		console.log('mapObjectHover.mouseleave');
-	});
+	mapObject.transition({ opacity: 1 }, 1000, 'easeOutQuad');
+	setTimeout(function() {
+		contactsWrapper.transition({ x: 0, opacity: 1, perspective: '200px', rotateY: '0deg' }, 2000, 'easeOutQuad');
+	}, 1000);
 };
 
 var fifthPageAnimationEnd = function(){
-	mapObject.transition({ opacity: 0 }, 200, 'easeOutQuad');
-	mapObject.css({'visibility': 'hidden'});
+	mapObject.transition({ opacity: 0 }, 400, 'easeOutQuad');
+	setTimeout(function() {
+		mapObject.css({'visibility': 'hidden'});
+	}, 500);
 };
 
 

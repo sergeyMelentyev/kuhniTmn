@@ -23,9 +23,11 @@
 	    DG.then(function () {
 	        map = DG.map('map', {
 	            center: [57.1315683, 65.5561094],
+	            zoomControl: false,
+                fullscreenControl: false,
 	            zoom: 16
 	        });
-	        DG.marker([57.1315683, 65.5561094]).addTo(map).bindPopup('<p>ТЦ Новый Магнат <br> мебельная компания "ЕВА"</p>').openPopup();
+	        DG.marker([57.1315683, 65.5561094]).addTo(map).bindPopup('<p>ТЦ Новый Магнат <br> Мебельная компания "ЕВА"</p>').openPopup();
 		    map.on('click', function(e) {
 		    	console.log(e.latlng);
 			});
@@ -36,7 +38,15 @@
 <div class="developedBy"><canvas id="developer"></canvas></div>
 <div class="developedByQuestion">?</div>
 <div class="developedByText"><a href="http://www.privatewebtailor.com" target="_blank">Developed by Melentyev</a></div>
-<div id="map" class="mapGis"></div>
+<div id="map" class="mapGis">
+	<img class="fifthPageArrow" src="img/fifthPage/arrowUp.svg">
+	<div class="contactsWrapper">
+		<h1>Тюмень, 30 лет Победы, 7/5</h1>
+		<h1>Ежедневно с 10:00 до 19:00</h1>
+		<h1>+7(3452)606-601</h1>
+		<h1>+7(3452)754-812</h1>
+	</div>
+</div>
 
 	<div class='thirdPageGalleryWrapper'>
 		<div class="thirdPageGalleryReadyIcon activeGallery"><img src="img/thirdPage/readyGallery.png"></div>
@@ -2072,7 +2082,7 @@
 				<img class="secondPagePersonalIcon" src="img/secondPage/pesonalIn.svg">				
 				<aside>
 					<h1 class='secondPageFactoryContext'>
-						Передовые технологии и собсвенное производство
+						Передовые технологии и собственное производство
 					</h1>
 					<h1 class='secondPageNatureContext'>
 						Высококачественные ЭКО материалы и фурнитура
@@ -2088,7 +2098,7 @@
 					<h1 class='secondPageFirstOffer'>Передовые технологии 
 						<img src="img/secondPage/factorySmall.svg">
 					</h1>
-					<h1 class='secondPageSecondOffer'>ЭКО материалы
+					<h1 class='secondPageSecondOffer'>ЭКО-материалы
 						<img src="img/secondPage/natureSmall.svg">
 					</h1>
 					<h1 class='secondPageThirdOffer'>Долгий срок службы
@@ -3749,7 +3759,7 @@
 					<h1 class="fourthPageCenterHeader fourthPageFourthContent">Посудомоечные машины</h1>
 					<h1 class="fourthPageCenterHeader fourthPageFifthContent">Раковины для кухни</h1>
 					<h1 class="fourthPageCenterHeader fourthPageSixthContent">Кухонная мебель</h1>
-					<h1 class="fourthPageCenterHeader fourthPageFinalContent">Снижаем цены на все!</h1>
+					<h1 class="fourthPageCenterHeader fourthPageFinalContent">Потому что мы любим своих клиентов!</h1>
 					<img class="graphicLeftTop" src="img/fourthPage/bottom.svg">
 					<img class="graphicLeftCenter" src="img/fourthPage/hood.svg">
 					<img class="graphicLeftBottom" src="img/fourthPage/dish.svg">
@@ -3766,10 +3776,7 @@
 		</article>
 
 		<article class="section fifthPage">
-		<img class="fifthPageArrow" src="img/fifthPage/arrowUp.svg">
-			<header>
-				
-			</header>
+		<img src="img/fifthPage/fifthBg.png">
 		</article>
 
 	</main>
