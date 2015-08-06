@@ -134,8 +134,8 @@ var preLoaderView = $('.preLoaderView'),
 
 var drawSvgMainTheme = function(){
 	myVivus = new Vivus('svgBackGroundDrawingId', {
-    type: 'oneByOne',
-    duration: 2000
+    type: 'delayed',
+    duration: 100
 	},
     function(){
     	console.log('MAIN SVG BG DONE');
@@ -158,7 +158,7 @@ var drawSvgThirdPageCallBack = function() {
 
 
 									/* MAIN APP STARTER */
-
+    
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false); 
     allAnimationStartPosition();
@@ -168,7 +168,7 @@ window.addEventListener("load", function load(event){
 },false);
 
 function delayedStart() {
-  timeoutID = window.setTimeout(startApplication, 1000);
+  timeoutID = window.setTimeout(startApplication, 100);
   console.log('DELAYED START 1000MS DONE'); 
 }
 
