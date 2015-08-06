@@ -104,8 +104,8 @@ p{
 	position: absolute;
 	z-index: -9;
 	border-radius: 200px;
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 	opacity: 0;
 }
 .arrowDown{
