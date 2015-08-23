@@ -13,6 +13,7 @@ var preLoaderView = $('.preLoaderView'),
 	mainContantWrapper = $('.mainContantWrapper'),
 
 	pleaseWaitDrawSvg = $('.pleaseWaitDrawSvg'),
+	pleaseWaitPng = $('.pleaseWaitPng'),
 
 	secondPageHeader = $('.secondPage header'),
 	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
@@ -31,7 +32,7 @@ var preLoaderView = $('.preLoaderView'),
 	secondQuestion = $('.secondQuestion'),
 	thirdQuestion = $('.thirdQuestion'),
 	zeroPageBg = $('.zeroPageBg'),
-	arrowDown = $('.arrowDown'),
+	arrowDownZeroPage = $('.arrowDownZeroPage'),
 	arrowUp = $('.arrowUp'),
 	arrowUpDownRight = $('.arrowUpDownRight'),
 	arrowUpDownLeft = $('.arrowUpDownLeft'),
@@ -129,56 +130,32 @@ var preLoaderView = $('.preLoaderView'),
 	contactsWrapper = $('.contactsWrapper'),
 	mapObjectHover = $('.mapGis p');
 
+console.log('afterRender testClicked');
+$('.arrowDownZeroPage').mouseover(function(){
+	console.log('testClicked!!');
+});
 
-									/* SVG ANIMATION  */
-
-var drawSvgThirdPage = function(){
-	var svg = new Walkway({
-		selector: '#backSvgWrapperDraw',
-		duration: '5000',
-		easing: function (t) {
-			return t<.5 ? 2*t*t : -1+(4-2*t)*t
-		}
-	});
-	svg.draw(drawSvgThirdPageCallBack);
-};
-var drawSvgThirdPageCallBack = function() {
-	thirdPageArrow.transition({ opacity: 100, delay: 500 }, 2000, 'easeOutQuad');
-};
-
-/*
-pleaseWaitDrawSvg
-var drawSvgThirdPage = function(){
-	var svg = new Walkway({
-		selector: '#backSvgWrapperDraw',
-		duration: '5000',
-		easing: function (t) {
-			return t<.5 ? 2*t*t : -1+(4-2*t)*t
-		}
-	});
-	svg.draw(drawSvgThirdPageCallBack);
-};
-/*
 									/* MAIN APP STARTER */
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false); 
     allAnimationStartPosition();
+    drawPleaseWait();
     delayedStart();
     console.log('ONLOAD EVENT FIRES'); 
 },false);
 
 function delayedStart() {
-  timeoutID = window.setTimeout(startApplication, 100);
+  timeoutID = window.setTimeout(startApplication, 10);
   console.log('DELAYED START 1000MS DONE'); 
 }
 
 function startApplication () {
     console.log('APP READY TO GO');
-	readyToLaunch.transition({ opacity: 100 }, 500);
-	pleaseWaitWrapper.transition({ opacity: 0, delay: 500 }, 500);
+	readyToLaunch.transition({ opacity: 100 }, 2000, 'easeOutQuad');
+	pleaseWaitWrapper.transition({ opacity: 0, delay: 1000 }, 1000);
 	setTimeout(function(){
 		pleaseWaitWrapper.css({'display': 'none'});
-	}, 1000);
+	}, 3000);
 	readyToLaunch.click(function(){
 		preLoaderView.transition({ y: -4000, delay: 50 }, 3000); // CUSTOMIZE STARTING DELAY HERE
 		setTimeout(function(){
@@ -261,13 +238,14 @@ function startApplication () {
 				afterLoad: function(anchorLink, index){
 					if (anchorLink == 'Question') {
 						zeroPageAnimation();
-					};
+					}
 					if (anchorLink == 'Sales') {
 						firstPageAnimation();
-					};
+						arrowDownZeroPage.transition({ opacity: 0 }, 500);
+					}
 					if(anchorLink == 'Quality'){
 						secondPageAnimation();
-					};
+					}
 					if (anchorLink == 'Portfolio') {
 						leftSvgHeader.transition({ x: 130, opacity: 100 }, 1000);
 						rightSvgHeader.transition({ x: -100, opacity: 100 }, 1000);
@@ -276,14 +254,14 @@ function startApplication () {
 							$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
 							drawSvgThirdPage();
 						};
-					};
+					}
 					if (anchorLink == 'Goods') {
 						fourthPageAnimation();
-					};
+					}
 					if (anchorLink == 'Contacts') {
 						fifthPageAnimationStart();
 						fifthPageArrow.transition({ opacity: 100, delay: 1500 }, 1000, 'easeOutQuad');
-					};
+					}
 				},
 				afterRender: function(){},
 				afterResize: function(){},
@@ -308,7 +286,33 @@ function startApplication () {
 	});
   };
 
-/* INITIALIZATION */
+									/* INITIALIZATION */
+var drawSvgThirdPage = function(){
+	var svg = new Walkway({
+		selector: '#backSvgWrapperDraw',
+		duration: '5000',
+		easing: function (t) {
+			return t<.5 ? 2*t*t : -1+(4-2*t)*t
+		}
+	});
+	svg.draw(drawSvgThirdPageCallBack);
+};
+var drawSvgThirdPageCallBack = function() {
+	thirdPageArrow.transition({ opacity: 100, delay: 500 }, 2000, 'easeOutQuad');
+};
+
+var drawPleaseWait = function(){
+	var pleaseWait = new Walkway({
+		selector: '#pleaseWaitDrawSvg',
+		duration: '15000',
+		easing: function (t) {
+			return t<.5 ? 2*t*t : -1+(4-2*t)*t
+		}
+	});
+	pleaseWait.draw(drawPleaseWaitCallBack);
+};
+var drawPleaseWaitCallBack = function() {};
+
 $('.slider-for').slick({ // первый слайдер галереи с готовыми кухняли
 	slidesToShow: 1,
 	slidesToScroll: 1,
@@ -350,7 +354,8 @@ $('.slider-nav-scetch').slick({
 									/* ANIMATION FUNCTIONS START POSITION */
 
 var allAnimationStartPosition = function(){
-	
+	pleaseWaitDrawSvg.transition({ opacity: 100 }, 500, 'easeOutQuad');
+
 	/* ZERO PAGE */
 	zeroPageQuestionWrapper.transition({ x: -300, opacity: 0 }, 10);
 	firstQuestion.transition({ x: -200, opacity: 0 }, 10);
@@ -449,7 +454,7 @@ var zeroPageAnimationStageTwo = function(){
 		zeroPageBg.transition({ scale: 2 }, 500, 'easeOutCubic').transition({ rotate: '180deg' }, 1000, 'easeOutCubic').transition({ scale: 1 }, 500, 'easeOutCubic');
 	}, 5000);
 	setTimeout(function() {
-		arrowDown.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
+		arrowDownZeroPage.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
 	}, 6000);
 };
 										/* FIRST PAGE ANIMATION */
