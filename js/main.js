@@ -3,17 +3,17 @@
 var preLoaderView = $('.preLoaderView'),
 	pleaseWaitWrapper = $('.pleaseWaitWrapper'),
 	readyToLaunch = $('.readyToLaunch'),
-	svgBackGroundComplete = $('.svgBackGroundComplete'),
 	setGalleryViewCounter = 0,
 	zeroPageCounter = 0,
 	firstPageCounter = 0,
 	secondPageCounter = 0,
 	fourthPageCounter = 0,
 	timeoutID,
-	myVivus,
-	thirdPageVivus,
 	fullpage = $('#fullpage'),
 	mainContantWrapper = $('.mainContantWrapper'),
+
+	pleaseWaitDrawSvg = $('.pleaseWaitDrawSvg'),
+
 	secondPageHeader = $('.secondPage header'),
 	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
 	backSvgWrapperDrawCounter = 0,
@@ -132,16 +132,6 @@ var preLoaderView = $('.preLoaderView'),
 
 									/* SVG ANIMATION  */
 
-var drawSvgMainTheme = function(){
-	myVivus = new Vivus('svgBackGroundDrawingId', {
-    type: 'delayed',
-    duration: 100
-	},
-    function(){
-    	console.log('MAIN SVG BG DONE');
-    });
-};
-
 var drawSvgThirdPage = function(){
 	var svg = new Walkway({
 		selector: '#backSvgWrapperDraw',
@@ -156,13 +146,23 @@ var drawSvgThirdPageCallBack = function() {
 	thirdPageArrow.transition({ opacity: 100, delay: 500 }, 2000, 'easeOutQuad');
 };
 
-
+/*
+pleaseWaitDrawSvg
+var drawSvgThirdPage = function(){
+	var svg = new Walkway({
+		selector: '#backSvgWrapperDraw',
+		duration: '5000',
+		easing: function (t) {
+			return t<.5 ? 2*t*t : -1+(4-2*t)*t
+		}
+	});
+	svg.draw(drawSvgThirdPageCallBack);
+};
+/*
 									/* MAIN APP STARTER */
-    
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false); 
     allAnimationStartPosition();
-    drawSvgMainTheme();
     delayedStart();
     console.log('ONLOAD EVENT FIRES'); 
 },false);
@@ -174,8 +174,6 @@ function delayedStart() {
 
 function startApplication () {
     console.log('APP READY TO GO');
-	myVivus.stop();
-	svgBackGroundComplete.transition({ opacity: 100 }, 500);
 	readyToLaunch.transition({ opacity: 100 }, 500);
 	pleaseWaitWrapper.transition({ opacity: 0, delay: 500 }, 500);
 	setTimeout(function(){

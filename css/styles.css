@@ -151,6 +151,12 @@ p{
 	transition: 0.5 all;
 		-webkit-transition: 0.5 all;
 }
+.pleaseWaitDrawSvg{
+	position: absolute;
+	z-index: 99;
+	opacity: 0;
+	width: 100%;
+}
 .readyToLaunch{
 	position: absolute;
 	cursor: pointer;
@@ -173,23 +179,8 @@ p{
 	transition: 0.5 all;
 		-webkit-transition: 0.5 all;
 }
-.svgBackGroundDrawing{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	margin: auto;
-}
-		.svgBackGroundDrawing svg{
-			width: 95%;
-			height: 95%;
-		}
 .svgBackGroundComplete{
 	position: absolute;
-	opacity: 0;
 	width: 100%;
 	height: 100%;
 	top: 0px;
