@@ -290,7 +290,6 @@ p{
 .pleaseWaitDrawSvg{
 	position: absolute;
 	z-index: 99;
-	opacity: 0;
 	width: 100%;
 }
 .pleaseWaitPng{

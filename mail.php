@@ -5,10 +5,10 @@ if (isset($_POST['body'])) {$body = $_POST['body']; if ($body == '') {unset($bod
  
 if (isset($body)) {
 	$address = "sergey.melentyev@gmail.com";
-	$mes = "Текст: $body";
-	$send = mail ($address,$mes,"Content-type:text/plain; charset = UTF-8");
+	$mes = "Новый Клиент: $body";
+	$send = mail ($address,$mes,"Позвоните новому клиенту");
 	if ($send == 'true'){
-		echo "Сообщение отправлено успешно, через 6 секунд Вы будете направлены на главную страницу";
+		echo "Спасибо!";
 	}
 	else {
 		echo "Ошибка, сообщение не отправлено!";

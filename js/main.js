@@ -14,7 +14,6 @@ var preLoaderView = $('.preLoaderView'),
 
 	callHunterStarter = $('.callHunterStarter'),
 	preLoaderNav = $('.preLoaderNav'),
-	pleaseWaitDrawSvg = $('.pleaseWaitDrawSvg'),
 	pleaseWaitPng = $('.pleaseWaitPng'),
 	callHunterFormWrapper = $('.callHunterFormWrapper'),
 	callHunterForm = $('.callHunterForm'),
@@ -149,11 +148,11 @@ callHunterFormExit.click(function(){
 });
 
 									/* MAIN APP STARTER */
+
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false);
     preLoaderNav.transition({ x: -20 }, 10, 'easeOutQuad');
     allAnimationStartPosition();
-    drawPleaseWait();
     delayedStart();
     console.log('ONLOAD EVENT FIRES'); 
 },false);
@@ -349,18 +348,6 @@ var drawSvgThirdPage = function(){
 };
 var drawSvgThirdPageCallBack = function() {};
 
-var drawPleaseWait = function(){
-	var pleaseWait = new Walkway({
-		selector: '#pleaseWaitDrawSvg',
-		duration: '15000',
-		easing: function (t) {
-			return t<.5 ? 2*t*t : -1+(4-2*t)*t
-		}
-	});
-	pleaseWait.draw(drawPleaseWaitCallBack);
-};
-var drawPleaseWaitCallBack = function() {};
-
 $('.slider-for').slick({ // первый слайдер галереи с готовыми кухняли
 	slidesToShow: 1,
 	slidesToScroll: 1,
@@ -402,7 +389,6 @@ $('.slider-nav-scetch').slick({
 									/* ANIMATION FUNCTIONS START POSITION */
 
 var allAnimationStartPosition = function(){
-	pleaseWaitDrawSvg.transition({ opacity: 100 }, 500, 'easeOutQuad');
 
 	/* ZERO PAGE */
 	zeroPageQuestionWrapper.transition({ x: -300, opacity: 0 }, 10);
