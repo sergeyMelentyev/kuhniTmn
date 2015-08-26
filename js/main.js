@@ -12,8 +12,13 @@ var preLoaderView = $('.preLoaderView'),
 	fullpage = $('#fullpage'),
 	mainContantWrapper = $('.mainContantWrapper'),
 
+	callHunterStarter = $('.callHunterStarter'),
+	preLoaderNav = $('.preLoaderNav'),
 	pleaseWaitDrawSvg = $('.pleaseWaitDrawSvg'),
 	pleaseWaitPng = $('.pleaseWaitPng'),
+	callHunterFormWrapper = $('.callHunterFormWrapper'),
+	callHunterForm = $('.callHunterForm'),
+	callHunterFormExit = $('.callHunterFormExit'),
 
 	secondPageHeader = $('.secondPage header'),
 	secondPageIconsWrapper = $('.secondPageIconsWrapper'),
@@ -32,10 +37,6 @@ var preLoaderView = $('.preLoaderView'),
 	secondQuestion = $('.secondQuestion'),
 	thirdQuestion = $('.thirdQuestion'),
 	zeroPageBg = $('.zeroPageBg'),
-	arrowDownZeroPage = $('.arrowDownZeroPage'),
-	arrowUp = $('.arrowUp'),
-	arrowUpDownRight = $('.arrowUpDownRight'),
-	arrowUpDownLeft = $('.arrowUpDownLeft'),
 	developedByQuestion = $('.developedByQuestion'),
 	developedByText = $('.developedByText'),
 	developedBy = $('.developedBy'),
@@ -65,8 +66,6 @@ var preLoaderView = $('.preLoaderView'),
 	firstPageCreditIcon = $('.firstPageCreditIcon'),
 	firstPageCreditContext = $('.firstPageCreditContext'),
 
-	firstPageArrowUpDown = $('.firstPageArrowUpDown'),
-
 	/* SECOND PAGE */
 	hottestQuestionWrapperSecondPage = $('.hottestQuestionWrapperSecondPage'),
 	hottestQuestionSecondPage = $('.hottestQuestionSecondPage'),
@@ -94,15 +93,12 @@ var preLoaderView = $('.preLoaderView'),
 	secondPagePersonalWrapper = $('.secondPagePersonalWrapper'),
 	secondPagePersonalIcon = $('.secondPagePersonalIcon'),
 	secondPagePersonalContext = $('.secondPagePersonalContext'),
-
-	secondPageArrowUpDown = $('.secondPageArrowUpDown'),
 	
 	/* THIRD PAGE */
-	thirdPageArrow = $('.thirdPageArrow'),
-	thirdPageSlideArrow = $('.thirdPageSlideArrow'),
+	thirdPageGalleryNavOn = $('.thirdPageGalleryNavOn'),
+	thirdPageGalleryNavOff = $('.thirdPageGalleryNavOff'),
 
 	/* FOURTH PAGE */
-	fourthPageArrow = $('.fourthPageArrow'),
 	hottestQuestionWrapperFourthPage = $('.hottestQuestionWrapperFourthPage'),
 	hottestQuestionFourthPage = $('.hottestQuestionFourthPage'),
 	
@@ -125,19 +121,37 @@ var preLoaderView = $('.preLoaderView'),
 	fourthPageFinalContent = $('.fourthPageFinalContent'),
 
 	/* FIFTH PAGE */
-	fifthPageArrow = $('.fifthPageArrow'),
 	mapObject = $('.mapGis'),
 	contactsWrapper = $('.contactsWrapper'),
 	mapObjectHover = $('.mapGis p');
 
-console.log('afterRender testClicked');
-$('.arrowDownZeroPage').mouseover(function(){
-	console.log('testClicked!!');
+									/* CALL HUNTER */
+callHunterForm.transition({ y: -20 }, 10, 'easeOutQuad');
+
+callHunterStarter.hover(
+	function() {
+		callHunterStarter.transition({ scale: 1.1, opacity: 1 }, 100, 'easeOutQuad');
+  	}, function() {
+		callHunterStarter.transition({ scale: 1, opacity: 0.5 }, 100, 'easeOutQuad');
+  	}
+);
+callHunterStarter.click(function(){
+	callHunterFormWrapper.css({'visibility': 'initial'});
+	callHunterForm.transition({ y: 0 }, 1000, 'easeOutQuad');
+	callHunterFormWrapper.transition({ opacity: 1 }, 500, 'easeOutQuad');
+});
+callHunterFormExit.click(function(){
+	callHunterFormWrapper.transition({ opacity: 0 }, 500, 'easeOutQuad');
+	callHunterForm.transition({ y: -20 }, 1000, 'easeOutQuad');
+	setTimeout(function() {
+		callHunterFormWrapper.css({'visibility': 'hidden'});
+	}, 1000);
 });
 
 									/* MAIN APP STARTER */
 window.addEventListener("load", function load(event){
-    window.removeEventListener("load", load, false); 
+    window.removeEventListener("load", load, false);
+    preLoaderNav.transition({ x: -20 }, 10, 'easeOutQuad');
     allAnimationStartPosition();
     drawPleaseWait();
     delayedStart();
@@ -145,7 +159,7 @@ window.addEventListener("load", function load(event){
 },false);
 
 function delayedStart() {
-  timeoutID = window.setTimeout(startApplication, 10);
+  timeoutID = window.setTimeout(startApplication, 50);
   console.log('DELAYED START 1000MS DONE'); 
 }
 
@@ -153,6 +167,7 @@ function startApplication () {
     console.log('APP READY TO GO');
 	readyToLaunch.transition({ opacity: 100 }, 2000, 'easeOutQuad');
 	pleaseWaitWrapper.transition({ opacity: 0, delay: 1000 }, 1000);
+	preLoaderNav.transition({ x: 0, opacity: 1 }, 2000, 'easeOutQuad');
 	setTimeout(function(){
 		pleaseWaitWrapper.css({'display': 'none'});
 	}, 3000);
@@ -220,16 +235,30 @@ function startApplication () {
 						if (setGalleryViewCounter === 1) {
 							animationStartFirstSlide();
 						};
+						thirdPageGalleryNavOn.css({'visibility': 'initial'});
+						thirdPageGalleryNavOn.transition({ opacity: 1, delay: 1000 }, 1000, 'easeOutQuad');
+					};
+					if (index === 4 && nextIndex === 3) {
+						thirdPageGalleryNavOn.transition({ opacity: 0 }, 50, 'easeOutQuad');
+						setTimeout(function() {
+							thirdPageGalleryNavOn.css({'visibility': 'hidden'});
+						}, 500);
 					};
 					if (index === 4 && nextIndex === 5) {
 						if (setGalleryViewCounter === 1) {
 							animationEndFirstSlide();
 						};
+						thirdPageGalleryNavOn.transition({ opacity: 0 }, 50, 'easeOutQuad');
+						setTimeout(function() {
+							thirdPageGalleryNavOn.css({'visibility': 'hidden'});
+						}, 500);
 					};
 					if (index === 5 && nextIndex === 4) {
 						if (setGalleryViewCounter === 1) {
 							animationStartFirstSlide();
 						};
+						thirdPageGalleryNavOn.css({'visibility': 'initial'});
+						thirdPageGalleryNavOn.transition({ opacity: 1, delay: 1000 }, 1000, 'easeOutQuad');
 					};
 					if (index === 6 && nextIndex === 5) {
 						fifthPageAnimationEnd();
@@ -241,7 +270,6 @@ function startApplication () {
 					}
 					if (anchorLink == 'Sales') {
 						firstPageAnimation();
-						arrowDownZeroPage.transition({ opacity: 0 }, 500);
 					}
 					if(anchorLink == 'Quality'){
 						secondPageAnimation();
@@ -260,10 +288,16 @@ function startApplication () {
 					}
 					if (anchorLink == 'Contacts') {
 						fifthPageAnimationStart();
-						fifthPageArrow.transition({ opacity: 100, delay: 1500 }, 1000, 'easeOutQuad');
 					}
 				},
-				afterRender: function(){},
+				afterRender: function(){
+					thirdPageGalleryNavOn.click(function(){
+						$.fn.fullpage.moveTo(4,1);
+					});
+					thirdPageGalleryNavOff.click(function(){
+						$.fn.fullpage.moveTo(4,0);
+					});
+				},
 				afterResize: function(){},
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
 					if (slideAnchor == 'slide2') {
@@ -272,12 +306,28 @@ function startApplication () {
 				},
 				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
 					if (slideIndex == 0 && nextSlideIndex == 1 && direction == 'right') { // Переход к первому слайду галереи
+						$.fn.fullpage.setAllowScrolling(false);
+						$.fn.fullpage.setKeyboardScrolling(false);
 						animationStartFirstSlide();
 						setGalleryViewCounter = 1;
+						thirdPageGalleryNavOn.transition({ opacity: 0 }, 50, 'easeOutQuad');
+						setTimeout(function() {
+							thirdPageGalleryNavOn.css({'visibility': 'hidden'});
+						}, 500);
+						thirdPageGalleryNavOff.css({'visibility': 'initial'});
+						thirdPageGalleryNavOff.transition({ opacity: 1, delay: 1000 }, 1000, 'easeOutQuad');
 					};
 					if (slideIndex == 1 && nextSlideIndex == 0 && direction == 'left') { // возврат из галереи
+						$.fn.fullpage.setAllowScrolling(true);
+						$.fn.fullpage.setKeyboardScrolling(true);
 						animationEndFirstSlide();
 						setGalleryViewCounter = 0;
+						thirdPageGalleryNavOn.css({'visibility': 'initial'});
+						thirdPageGalleryNavOn.transition({ opacity: 1, delay: 1000 }, 1000, 'easeOutQuad');
+						thirdPageGalleryNavOff.transition({ opacity: 0 }, 50, 'easeOutQuad');
+						setTimeout(function() {
+							thirdPageGalleryNavOff.css({'visibility': 'hidden'});
+						}, 500);
 					};
 					console.log("onLeave--" + "slideIndex: " + slideIndex + " nextSlideIndex: " + nextSlideIndex + " direction: " +  direction);
 				}
@@ -297,9 +347,7 @@ var drawSvgThirdPage = function(){
 	});
 	svg.draw(drawSvgThirdPageCallBack);
 };
-var drawSvgThirdPageCallBack = function() {
-	thirdPageArrow.transition({ opacity: 100, delay: 500 }, 2000, 'easeOutQuad');
-};
+var drawSvgThirdPageCallBack = function() {};
 
 var drawPleaseWait = function(){
 	var pleaseWait = new Walkway({
@@ -453,9 +501,7 @@ var zeroPageAnimationStageTwo = function(){
 		zeroPageQuestionWrapper.transition({ y: 50, opacity: 0, delay: 100 }, 1000, 'easeOutQuad');
 		zeroPageBg.transition({ scale: 2 }, 500, 'easeOutCubic').transition({ rotate: '180deg' }, 1000, 'easeOutCubic').transition({ scale: 1 }, 500, 'easeOutCubic');
 	}, 5000);
-	setTimeout(function() {
-		arrowDownZeroPage.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
-	}, 6000);
+	setTimeout(function() {}, 6000);
 };
 										/* FIRST PAGE ANIMATION */
 
@@ -527,9 +573,7 @@ var firstPageAnimation = function(){
 			hottestQuestionWrapperFirstPage.transition({ y: 200 }, 2000, 'easeOutQuad');
 			hottestQuestionFirstPage.transition({ y: 200 }, 2000, 'easeOutQuad');
 		}, 2000); // Пауза. Заголовок опустился в центре
-		setTimeout(function() {
-			firstPageArrowUpDown.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
-		}, 2000);
+		setTimeout(function() {}, 2000);
 	};
 	};
 };
@@ -629,10 +673,8 @@ var secondPageAnimation = function(){
 			hottestQuestionWrapperSecondPage.transition({ y: 200 }, 2000, 'easeOutQuad');
 			hottestQuestionSecondPage.transition({ y: 200 }, 2000, 'easeOutQuad');
 		}, 2000); // Пауза. Заголовок опустился в центре
-		setTimeout(function() {
-			secondPageArrowUpDown.transition({ opacity: 100, delay: 1000 }, 1000, 'easeOutQuad');
-		}, 2000);
-	};
+		setTimeout(function() {}, 2000);
+		};
 	};
 };
 										/* FOURTH PAGE ANIMATION */
@@ -669,7 +711,6 @@ var fourthPageAnimation = function(){
 											setTimeout(function() {
 												fourthPageSixthContent.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 												fourthPageFinalContent.transition({ opacity: 1 }, 1000, 'easeOutQuad');
-												fourthPageArrow.transition({ opacity: 1, delay: 2000 }, 1000, 'easeOutQuad');
 											}, 4000); // Пауза. Появляется мебель
 										}, 4000); // Пауза. Появляется мебель
 								}, 4000); // Пауза. Появляется раковина
@@ -703,8 +744,6 @@ var fifthPageAnimationEnd = function(){
 
 var animationStartFirstSlide = function(){ // Переход к первому слайду галереи
 	setGalleryViewCounter = 1;
-	thirdPageArrow.transition({ opacity: 0 }, 1000, 'easeOutQuad');
-	thirdPageSlideArrow.transition({ opacity: 100 }, 1000, 'easeOutQuad');
 	setTimeout(function(){
 		thirdPageGalleryWrapper.css({'visibility': 'initial'});
 		thirdPageGalleryScetchIcon.transition({ x: '200px', opacity: 0.2 }, 500);
@@ -737,8 +776,6 @@ var animationEndFirstSlide = function(){ // Выход из первого сл�
 		thirdPageGalleryScetchIcon.removeClass('activeGallery');
 		thirdPageGalleryReadyIcon.addClass('activeGallery');
 	};
-	thirdPageArrow.transition({ opacity: 100 }, 1000, 'easeOutQuad');
-	thirdPageSlideArrow.transition({ opacity: 0 }, 1000, 'easeOutQuad');
 	console.log('GALLERY OFF');
 };
 
