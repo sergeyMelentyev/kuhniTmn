@@ -58,8 +58,107 @@ a{
 }
 p{
 	font-size: 16px;
-
 }
+.callHunterStarter{
+	z-index: 99999;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	opacity: 0.5;
+	border-radius: 100px;
+		-moz-border-radius: 100px;
+		-webkit-border-radius: 100px;
+	background-color: hsla(0,0%,30%,0.5);
+}
+.callHunterStarter img{
+	position: absolute;
+	width: 70%;
+	opacity: 0.6;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+}
+.callHunterFormWrapper{
+	position: fixed;
+	z-index: 99999999999999999999;
+	width: 100%;
+	height: 100vh;
+	background-color: hsla(0,0%,10%,0.8);
+	opacity: 0;
+	visibility: hidden;
+}
+.callHunterForm{
+	position: absolute;
+	width: 450px;
+	height: 280px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+}
+.callHunterFormExit{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: -30px;
+	right: -30px;
+	color: #FFF;
+	font-size: 30px;
+	line-height: 30px;
+	border: 1px solid #FFF;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 30px;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+}
+.callHunterForm h1{
+	text-align: center;
+	font-size: 50px;
+	color: #FFF;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+	line-height: 55px;
+	margin: 0px 0px 50px 0px;
+}
+.callHunterForm textarea{
+	width: 260px;
+	height: 35px;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	padding: 5px;
+	margin-left: 90px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #5A5A5A;
+}
+#submit{
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	font-size: 25px;
+	color: #FFF;
+	margin: 10px 135px;
+	padding: 0px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .developedBy{
 	position: absolute;
 	z-index: 9999;
@@ -121,6 +220,39 @@ p{
 	background: -ms-linear-gradient(45deg,  rgba(67,196,194,1) 0%,rgba(253,191,60,1) 50%,rgba(104,75,146,1) 100%,rgba(104,75,146,1) 100%,rgba(104,75,146,1) 100%);
 	background: linear-gradient(45deg,  rgba(67,196,194,1) 0%,rgba(253,191,60,1) 50%,rgba(104,75,146,1) 100%,rgba(104,75,146,1) 100%,rgba(104,75,146,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43c4c2', endColorstr='#684b92',GradientType=1 );
+}
+.preLoaderNav{
+	position: absolute;
+	z-index: 9;
+	top: 0px;
+	bottom: -600px;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+	width: 350px;
+	height: 150px;
+	text-align: center;
+	background-color: hsla(0,0%,30%,0.5);
+	opacity: 0;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+		-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+}
+.preLoaderNav p{
+	color: #FFF;
+	font-size: 35px;
+	line-height: 50px;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+	margin-bottom: 5px;
+	opacity: 0.8;
+}
+.preLoaderNav img{
+	width: 25%;
+	float: left;
+	margin-left: 23px;
 }
 
 .pleaseWaitWrapper{
@@ -216,14 +348,6 @@ p{
 }
 .zeroPage {
 	position: relative;
-}
-.arrowDownZeroPage{
-	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
-	opacity: 0;
 }
 .zeroPageBg{
 	position: absolute;
@@ -346,14 +470,6 @@ p{
 
 
 										/* FIRST PAGE STARTS HERE */
-.firstPageArrowUpDown{
-	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
-	opacity: 0;
-}
 .firsPage header{
 	position: absolute;
 	color: #FFF;
@@ -553,14 +669,6 @@ p{
 
 
 									/* SECOND PAGE STARTS HERE */
-.secondPageArrowUpDown{
-	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
-	opacity: 0;
-}
 .secondPage header{
 	position: absolute;
 	color: #FFF;
@@ -814,21 +922,71 @@ p{
 
 
 									/* THIRD PAGE STARTS HERE */
-.thirdPageArrow{
+.thirdPageGalleryNavOn{
 	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
 	opacity: 0;
+	visibility: hidden;
+	z-index: 9999999999999;
+	width: 290px;
+	height: 50px;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+	text-align: center;
+	font-size: 40px;
+	background-color: hsla(0, 0%, 70%, 0.5);
+	bottom: 50px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+		-webkit-box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+		-moz-box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
 }
-.thirdPageSlideArrow{
+.thirdPageGalleryNavOn:hover{
+	color: #fff;
+	text-shadow: 0px 0px 0px #FFF;
+	box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
+		-webkit-box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
+		-moz-box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
+}
+.thirdPageGalleryNavOff{
 	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
+	z-index: 9999999999999;
 	opacity: 0;
+	visibility: hidden;
+	width: 290px;
+	height: 50px;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF;
+	text-align: center;
+	font-size: 40px;
+	background-color: hsla(0, 0%, 70%, 0.5);
+	bottom: 50px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+		-webkit-box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+		-moz-box-shadow: 0px 0px 15px 5px hsla(0, 0%, 60%, 0.5);
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+}
+.thirdPageGalleryNavOff:hover{
+	color: #fff;
+	text-shadow: 0px 0px 0px #FFF;
+	box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
+		-webkit-box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
+		-moz-box-shadow: 0px 0px 15px 0px hsla(0, 0%, 60%, 0.5);
 }
 .thirdPage{
 	position: relative;
@@ -970,14 +1128,6 @@ p{
 }
 
 									/* FOURTH PAGE STARTS HERE */
-.fourthPageArrow{
-	position: absolute;
-	z-index: 999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
-	opacity: 0;
-}
 .secondPage header{
 	position: absolute;
 	top: 0px;
@@ -1005,8 +1155,9 @@ p{
 .fourthPageCenterAnimationWrapper{
 	position: absolute;
 	width: 700px;
-	height: 480px;
-	top: 230px;
+	height: 450px;
+	top: 0px;
+	bottom: 0px;
 	right: 0px;
 	left: 0px;
 	margin: auto;
@@ -1123,15 +1274,6 @@ p{
 	left: 0px;
 	margin: auto;
 }
-.fifthPageArrow{
-	position: absolute;
-	z-index: 9999;
-	width: 150px;
-	right: 10px;
-	bottom: 10px;
-	opacity: 0;
-}
-
 #map{
 	position: absolute;
 	z-index: 99;
