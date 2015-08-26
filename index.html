@@ -44,7 +44,6 @@
 <div class="developedByQuestion">?</div>
 <div class="developedByText"><a href="http://www.privatewebtailor.com" target="_blank">Developed by Melentyev</a></div>
 <div id="map" class="mapGis">
-	<img class="fifthPageArrow" src="img/fifthPage/arrowUp.svg">
 	<div class="contactsWrapper">
 		<h1>Тюмень, 30 лет Победы, 7/5</h1>
 		<h1>Ежедневно с 10:00 до 19:00</h1>
@@ -101,10 +100,22 @@
 			</div>
 		</div>
 	</div>
+	<div class="thirdPageGalleryNavOn">
+		посмотреть галерею
+	</div>
+	<div class="thirdPageGalleryNavOff">
+		вернуться обратно
+	</div>
     <div class='smallDevices'>
     	<h1>Мобильная версия вэб приложения на данном этапе сборки деактивирована. <br> Пожалуйста, запустите приложение с иной системы (с шириной экрана более 1024 пикселей). <br> Приносим свои извинения за предоставленные неудобства.</h1>
     </div>
 	<div class="preLoaderView">
+		<div class="preLoaderNav">
+			<p>для навигации используйте</p>
+			<img src="img/pleaseWait/keyboard.png">
+			<img src="img/pleaseWait/mouse.png">
+			<img src="img/pleaseWait/swipe.png">
+		</div>
 		<div class="pleaseWaitWrapper">
 			<div class="pleaseWaitDrawSvg">
 				<svg version="1.2" id="pleaseWaitDrawSvg" baseProfile="tiny" x="0px" y="0px" viewBox="0 0 1000 1000" xml:space="preserve">
@@ -225,7 +236,7 @@
 				</g>
 				</svg>
 			</div>
-			<img class="pleaseWaitPng" src="img/pleaseWait.png">
+			<img class="pleaseWaitPng" src="img/pleaseWait/pleaseWait.png">
 		</div>
 		<div class="readyToLaunch">
 			<svg class="readyToLaunchSvg" version="1.2" baseProfile="tiny" x="0px" y="0px" viewBox="0 0 1000 1000" xml:space="preserve">
@@ -1182,12 +1193,21 @@
 			</g>
 			</svg></div>
 	</div>
-	<img class="arrowDownZeroPage" src="img/zeroPage/arrowDown.svg">
 	
+	<div class="callHunterStarter">
+		<img src="img/call.png">
+	</div>
+	<div class="callHunterFormWrapper">
+		<div class="callHunterForm">
+			<span class="callHunterFormExit">X</span>
+			<h1>Мы перезвоним вам в ближайшее время</h1>
+			<form name="MyForm" action="http://kuhni-eva.ru/mail.php" method="post">
+				<textarea name="body" wrap="off" cols="1" rows="1" placeholder="Введите ваш номер"></textarea>
+				<input id="submit" value="Жду звонка!" type="submit" />
+			</form>
+		</div>
+	</div>
 
-
-
-	
 	<main id="fullpage" class="mainContantWrapper">
 		<article class="section zeroPage">
 			<div class="zeroPageBg">
@@ -1209,7 +1229,6 @@
 		</article>
 
 		<article class="section firsPage">
-		<img class="firstPageArrowUpDown" src="img/firstPage/arrowUpDown.svg">
 			<header>
 				<img class="hottestQuestionWrapperFirstPage" src="img/firstPage/hottestQuestionWrap.png">
 				<img class="hottestQuestionFirstPage" src="img/firstPage/hottestQuestionFirst.png">
@@ -1255,7 +1274,6 @@
 		</article>
 
 		<article class="section secondPage">
-		<img class="secondPageArrowUpDown" src="img/secondPage/arrowUpDown.svg">
 			<header>
 				<img class="hottestQuestionWrapperSecondPage" src="img/secondPage/hottestQuestionWrap.png">
 				<img class="hottestQuestionSecondPage" src="img/secondPage/hottestQuestionSecond.png">
@@ -1311,8 +1329,6 @@
 		</article>
 
 		<article class="section thirdPage">
-			<img class="thirdPageArrow" src="img/thirdPage/arrowUpDownRight.svg">
-			<img class="thirdPageSlideArrow" src="img/thirdPage/arrowUpDownLeft.svg">
 			 <div class="slide" id="slide1" data-anchor="slide1">
 				<header>
 					<div class="backSvgWrapper">
@@ -2854,7 +2870,6 @@
 		</article>
 
 		<article class="section fourthPage">
-		<img class="fourthPageArrow" src="img/secondPage/arrowUpDown.svg">
 			<header>
 				<img class="hottestQuestionWrapperFourthPage" src="img/fourthPage/hottestQuestionWrap.png">
 				<img class="hottestQuestionFourthPage" src="img/fourthPage/hottestQuestionFourth.png">
