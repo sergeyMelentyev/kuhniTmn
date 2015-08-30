@@ -11,6 +11,8 @@ var preLoaderView = $('.preLoaderView'),
 	timeoutID,
 	fullpage = $('#fullpage'),
 	mainContantWrapper = $('.mainContantWrapper'),
+	callHunterDevice = $('.callHunterDevice'),
+	callHunterText = $('.callHunterText'),
 
 	callHunterStarter = $('.callHunterStarter'),
 	preLoaderNav = $('.preLoaderNav'),
@@ -126,12 +128,26 @@ var preLoaderView = $('.preLoaderView'),
 
 									/* CALL HUNTER */
 callHunterForm.transition({ y: -20 }, 10, 'easeOutQuad');
+callHunterDevice.transition({ opacity: 1 }, 10, 'easeOutQuad');
+callHunterText.transition({ opacity: 0 }, 10, 'easeOutQuad');
+
+setInterval(function() {
+	callHunterDevice.transition({ opacity: 0 }, 500, 'easeOutQuad');
+	callHunterText.transition({ opacity: 1, delay: 500 }, 1000, 'easeOutQuad');
+	setTimeout(function() {
+		callHunterText.transition({ opacity: 0 }, 500, 'easeOutQuad');
+		callHunterDevice.transition({ opacity: 1, delay: 500 }, 1000, 'easeOutQuad');
+	}, 5000);
+}, 10000);
+
+
+
 
 callHunterStarter.hover(
 	function() {
-		callHunterStarter.transition({ scale: 1.1, opacity: 1 }, 100, 'easeOutQuad');
+		callHunterStarter.transition({ scale: 1.1 }, 100, 'easeOutQuad');
   	}, function() {
-		callHunterStarter.transition({ scale: 1, opacity: 0.5 }, 100, 'easeOutQuad');
+		callHunterStarter.transition({ scale: 1 }, 100, 'easeOutQuad');
   	}
 );
 callHunterStarter.click(function(){
@@ -154,16 +170,13 @@ window.addEventListener("load", function load(event){
     preLoaderNav.transition({ x: -20 }, 10, 'easeOutQuad');
     allAnimationStartPosition();
     delayedStart();
-    console.log('ONLOAD EVENT FIRES'); 
 },false);
 
 function delayedStart() {
   timeoutID = window.setTimeout(startApplication, 50);
-  console.log('DELAYED START 1000MS DONE'); 
 }
 
 function startApplication () {
-    console.log('APP READY TO GO');
 	readyToLaunch.transition({ opacity: 100 }, 2000, 'easeOutQuad');
 	pleaseWaitWrapper.transition({ opacity: 0, delay: 1000 }, 1000);
 	preLoaderNav.transition({ x: 0, opacity: 1 }, 2000, 'easeOutQuad');
@@ -274,11 +287,11 @@ function startApplication () {
 						secondPageAnimation();
 					}
 					if (anchorLink == 'Portfolio') {
-						leftSvgHeader.transition({ x: 130, opacity: 100 }, 1000);
-						rightSvgHeader.transition({ x: -100, opacity: 100 }, 1000);
+						leftSvgHeader.transition({ x: 130, opacity: 1 }, 1000);
+						rightSvgHeader.transition({ x: -130, opacity: 1 }, 1000);
 						if (backSvgWrapperDrawCounter === 0) {
 					    	backSvgWrapperDrawCounter++;
-							$('#backSvgWrapperDraw').transition({ opacity: 100 }, 500);
+							$('#backSvgWrapperDraw').transition({ opacity: 1 }, 500);
 							drawSvgThirdPage();
 						};
 					}
@@ -300,7 +313,6 @@ function startApplication () {
 				afterResize: function(){},
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
 					if (slideAnchor == 'slide2') {
-						console.log('GALLERY SLIDE FIRES');
 					};
 				},
 				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
@@ -569,7 +581,6 @@ var firstPageAnimation = function(){
 var secondPageAnimation = function(){
 	if (secondPageCounter === 0) {
 		secondPageCounter++;
-		console.log('secondPageAnimation first stage!');
 		hottestQuestionWrapperSecondPage.transition({ x: 0, opacity: 100 }, 1200, 'easeOutQuad');
 		hottestQuestionSecondPage.transition({ x: 0, opacity: 100 }, 1500, 'easeOutQuad');
 		setTimeout(function() {
@@ -591,7 +602,6 @@ var secondPageAnimation = function(){
 			}, 2000); // Пауза. Отрисовали скидку по центру
 		}, 3000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
 	var secondPageSecondStage = function(){
-				console.log('secondPageAnimation second stage!');
 	setTimeout(function() {
 			secondPageMedalTwo.transition({ scale: 1, opacity: 100, delay: 500 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
 			setTimeout(function() {
@@ -612,7 +622,6 @@ var secondPageAnimation = function(){
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
 	};
 	var secondPageThirdStage = function(){
-				console.log('secondPageAnimation third stage!');
 		setTimeout(function() {
 			secondPageMedalThree.transition({ scale: 1, opacity: 100, delay: 500 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
 			setTimeout(function() {
@@ -633,7 +642,6 @@ var secondPageAnimation = function(){
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
 	};
 	var secondPageFourthStage = function(){
-				console.log('secondPageAnimation fourth stage!');
 		setTimeout(function() {
 			secondPageMedalFour.transition({ scale: 1, opacity: 100, delay: 500 }, 500, 'easeOutQuad').transition({ x: -500, delay: 1000 }, 1000, 'easeOutQuad');
 			setTimeout(function() {
@@ -654,7 +662,6 @@ var secondPageAnimation = function(){
 		}, 1000); // Пауза. Отрисовка первой медали по центру (delay внутри) далее сдвинули
 	};
 	var secondPageFinalAction = function(){
-				console.log('secondPageAnimation final stage!');
 		setTimeout(function() {
 			hottestQuestionWrapperSecondPage.transition({ y: 200 }, 2000, 'easeOutQuad');
 			hottestQuestionSecondPage.transition({ y: 200 }, 2000, 'easeOutQuad');
@@ -748,7 +755,6 @@ var animationStartFirstSlide = function(){ // Переход к первому �
 			return false;
 		};
 	}, 350);
-	console.log('GALLERY LAUNCHED');
 };
 
 var animationEndFirstSlide = function(){ // Выход из первого слайда галереи
@@ -762,7 +768,6 @@ var animationEndFirstSlide = function(){ // Выход из первого сл�
 		thirdPageGalleryScetchIcon.removeClass('activeGallery');
 		thirdPageGalleryReadyIcon.addClass('activeGallery');
 	};
-	console.log('GALLERY OFF');
 };
 
 /* ONCLICK EVENTS*/
