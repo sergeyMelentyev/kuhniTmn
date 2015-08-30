@@ -1069,14 +1069,6 @@ p{
 	overflow: hidden;
 	visibility: hidden;
 }
-.bonusOffer{
-	position: absolute;
-	width: 200px;
-	height: 200px;
-	top: 0px;
-	left: 0px;
-	background-color: grey;
-}
 .thirdPageGalleryReady img, .thirdPageGalleryScetch div img{
 	width: 100%;
 }
@@ -1331,11 +1323,11 @@ p{
 	display: block;
 	color: #FFF;
 	font-size: 20px;
-	line-height: 60px;
+	line-height: 50px;
 	position: absolute;
 	z-index: 9999;
 	width: 300px;
-	height: 250px;
+	height: 200px;
 	padding-left: 30px;
 	top: 0px;
 	bottom: 0px;
@@ -1346,8 +1338,33 @@ p{
 	border: 1px solid #848484;
 	box-shadow: 0px 0px 5px #848484, 0px 0px 10px #848484;
 }
-
-
+.weAlsoWork{
+	position: absolute;
+	z-index: 9;
+	width: 80%;
+	height: 230px;
+	background-color: rgba(255, 255, 255, 1);
+	left: 0px;
+	right: 0px;
+	bottom: 10px;
+	margin: auto;
+	border-radius: 10px;
+	border: 1px solid #848484;
+	box-shadow: 0px 0px 5px #848484, 0px 0px 10px #848484;
+}
+.weAlsoWork h1{
+	color: #000;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 35px;
+	line-height: 60px;
+	text-align: center;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #000;
+}
+.weAlsoWork img{
+	float: left;
+	margin-left: 5%;
+	width: 160px;
+}
 
 
 @media screen and (max-width: 568px) {
