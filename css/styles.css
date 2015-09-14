@@ -106,7 +106,7 @@ p{
 }
 .callHunterFormWrapper{
 	position: fixed;
-	z-index: 99999999999999999999;
+	z-index: 999999;
 	width: 100%;
 	height: 100vh;
 	background-color: hsla(0,0%,10%,0.9);
@@ -1340,9 +1340,9 @@ p{
 }
 .weAlsoWork{
 	position: absolute;
-	z-index: 9;
-	width: 80%;
-	height: 230px;
+	z-index: 999;
+	width: 1030px;
+	height: 215px;
 	background-color: rgba(255, 255, 255, 1);
 	left: 0px;
 	right: 0px;
@@ -1350,7 +1350,7 @@ p{
 	margin: auto;
 	border-radius: 10px;
 	border: 1px solid #848484;
-	box-shadow: 0px 0px 5px #848484, 0px 0px 10px #848484;
+	box-shadow: 0px 0px 5px #848484, 0px 0px 5px #848484;
 }
 .weAlsoWork h1{
 	color: #000;
@@ -1358,87 +1358,112 @@ p{
 	font-size: 35px;
 	line-height: 60px;
 	text-align: center;
-	text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #000;
+	text-shadow: 0px 0px 5px #FFF, 0px 0px 5px #000;
 }
 .weAlsoWork img{
 	float: left;
-	margin-left: 5%;
-	width: 160px;
+	margin-left: 45px;
+	width: 150px;
 }
 
 
-@media screen and (max-width: 568px) {
-    header, figure, .developedBy, .developedByQuestion, .developedByText {
+@media all and (max-width: 569px) {
+    #fullpage, .preLoaderView, .developedBy, .developedByQuestion, .developedByText {
        display: none;
     }
-    h1{
-    	font-size: 0.9em;
-    	line-height: 1em;
-    	position: relative;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-    }
     .smallDevices{
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		margin: auto;
-		width: 230px;
-		height: 200px;
-		text-align: center;
-    	overflow: hidden;
-    	padding: 10px;
-		background-color: rgba(235,235,235,0.7);
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
-		-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
-		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+	    position: absolute;
+	    z-index: 999;
+	    width: 290px;
+	    height: 190px;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 0px;
+	    right: 0px;
+	    margin: auto;
+	    font-size: 25px;
+	    line-height: 30px;
+	    color: #000;
+	    text-align: center;
+	    text-shadow: 0px 0px 5px #000;
     }
+    .callHunterStarter{
+    	bottom: 20px;
+    	left: 0px;
+    	right: 0px;
+    	margin: auto;
+    }
+    .callHunterForm{
+		width: 300px;
+		height: 340px;
+	}
+	.callHunterFormExit{
+		top: -50px;
+		right: 0px;
+	}
+	.callHunterForm h1{
+		font-size: 30px;
+	}
+	.callHunterForm textarea{
+		width: 285px;
+		margin-left: 0px;
+	}
+	#submit{
+		width: 300px;
+		margin: 10px 0px;
+	}
 }
-
-@media screen and (max-width: 1020px) {
-	#fullpage, .preLoaderView {
+@media all and (max-width: 1023px) and (min-width: 569px) {
+   #fullpage, .preLoaderView, .developedBy, .developedByQuestion, .developedByText {
        display: none;
     }
-    h1{
-    	font-size: 1em;
-    	line-height: 1.2em;
-    	position: relative;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-    }
     .smallDevices{
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		margin: auto;
-		width: 230px;
-		height: 200px;
-		text-align: center;
-    	overflow: hidden;
-    	padding: 10px;
-		background-color: rgba(135,135,135,0.9);
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
-		-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
-		-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+	    position: absolute;
+	    z-index: 999;
+	    width: 420px;
+	    height: 180px;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 0px;
+	    right: 0px;
+	    margin: auto;
+	    font-size: 25px;
+	    line-height: 35px;
+	    color: #000;
+	    text-align: center;
+	    text-shadow: 0px 0px 5px #000;
     }
+    .callHunterStarter{
+    	bottom: 20px;
+    	left: 0px;
+    	right: 0px;
+    	margin: auto;
+    }
+    .callHunterForm{
+		width: 300px;
+		height: 340px;
+	}
+	.callHunterFormExit{
+		top: -50px;
+		right: 0px;
+	}
+	.callHunterForm h1{
+		font-size: 30px;
+	}
+	.callHunterForm textarea{
+		width: 285px;
+		margin-left: 0px;
+	}
+	#submit{
+		width: 300px;
+		margin: 10px 0px;
+	}
 }
 
-@media screen and (min-width: 1021px) {
-	.smallDevices{
-		 display: none;
-    }
+@media all and (max-width: 1300px) and (min-width: 1024px) {
+    .smallDevices{ display: none; }
+    
+}
+@media all and (min-width: 1301px) {
+    .smallDevices{ display: none; }
 }
